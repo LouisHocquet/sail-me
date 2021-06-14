@@ -7,6 +7,4 @@
 
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create()
-
-Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250)
+Boat.create!(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
