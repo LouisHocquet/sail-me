@@ -1,18 +1,40 @@
 // Specific CSS for your home-page
-.navbar-lewagon {
-  justify-content: space-between;
-  background: #75cff0;
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: #75cff0;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 5;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
+
+.card-category {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px;
 }
 
-.brand {
-  height: 60px;
-  margin: 5px auto;
+.card-category h1 {
+  display: block;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+.container {
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #9a9c9e;
+  text-align: center;
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
 }
