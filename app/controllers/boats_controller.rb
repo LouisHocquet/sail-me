@@ -1,7 +1,6 @@
 class BoatsController < ApplicationController
   def index
     @boats = Boat.all
-    @boat = Boat.new
   end
 
   def new
@@ -13,12 +12,11 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @boats = Boat.all
     @boat = Boat.new(boat_params)
     if @boat.save
-      redirect_to boats_path
+      redirect_to boat_path(@boat)
     else
-      render 'index'
+      render 'boats/show'
     end
   end
 
@@ -27,11 +25,18 @@ class BoatsController < ApplicationController
   end
 
   def update
-
+    @boat = Boat.find(params[:id])
+    @boat.update(boat_params)
+    if @boat.save
+      redirect_to boat_path(@boat)
+    else
+      render 'new'
+    end
+  end
 
   def destroy
-    @bookmark = Bookmark.find(params[:id])
-    @bookmark.destroy
+    @boat = Boat.find(params[:id])
+    @boat.destroy
 
     redirect_to boats_path
   end
