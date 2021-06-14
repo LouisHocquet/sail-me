@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_14_135417) do
+ActiveRecord::Schema.define(version: 2021_06_14_152325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "bookings", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "boats", force: :cascade do |t|
     t.string "category"
@@ -33,6 +28,18 @@ ActiveRecord::Schema.define(version: 2021_06_14_135417) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_boats_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "accepted", default: false
+    t.bigint "boat_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["boat_id"], name: "index_bookings_on_boat_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +58,6 @@ ActiveRecord::Schema.define(version: 2021_06_14_135417) do
   end
 
   add_foreign_key "boats", "users"
+  add_foreign_key "bookings", "boats"
+  add_foreign_key "bookings", "users"
 end
