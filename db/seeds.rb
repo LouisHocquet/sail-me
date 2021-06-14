@@ -4,4 +4,7 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Boat.create!(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
