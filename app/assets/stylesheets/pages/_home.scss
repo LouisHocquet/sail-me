@@ -1,12 +1,19 @@
-// Specific CSS for your home-page
-.style {
+body {
   font-family: 'Noto Sans JP', sans-serif;
+}
+
+.navbar {
+  height: 10vh;
+  position: fixed;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  z-index: 7;
 }
 
 .banner {
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 550px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,23 +23,30 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px;
   padding: 0 20px;
+  margin-top: 50px;
 }
 
 .booking-form {
   border-radius: 5px;
-  background-color: #ebd079;
+  background-color: RGBA(226,185,55,0.65);
   text-align: center;
   margin: 10px 0;
-  padding: 14px;
-  height: 70%;
+  padding: 18px;
+  height: 420px;
+  width: 390px;
 }
 
 .form-control {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .booking-form button {
-  margin: 10px 0;
+  padding: 50px 0;
+}
+
+.boat-type, .date-booking {
+  display: flex;
+  justify-content: space-around;
 }
 
 .title-card-reservation {
@@ -53,6 +67,7 @@
 
 .title-cards {
   text-align: center;
+  margin-top: 20px;
 }
 
 .cards {
@@ -72,6 +87,10 @@
   border: none;
 }
 
+.card h2 {
+  margin: inherit;
+}
+
 .cards :hover {
   .card {
     box-shadow: 1px 1px 2px grey;
@@ -88,8 +107,23 @@
   margin: 40px 0 0 0;
 }
 
-.footer a{
-  font-size: 20px;
-  color: #638dcd;
+.social-networks-footer a {
+    color: #2d578b;
+  }
+
+.social-networks-footer a :hover {
+      font-size: 20px;
+      color: #ebd079;
+  }
+
+.social-networks-footer ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  white-space: break-spaces;
+}
+
+.input-date {
+  padding: revert;
 }
 
