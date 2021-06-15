@@ -1,46 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
-  <title>Document</title>
-</head>
-  <body>
-    <div class="style">
-<!-- NAV BAR -->
-
 <!-- BANNER & INFO FORM-->
       <div class = "banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://book2sail.com/wp-content/uploads/2020/04/sailboat-1200x900.jpg)">
-        <div class="booking-form col-4">
+        <div class="booking-form">
           <div class="title-card-reservation">
             <h1>What's the next adventure?</h1>
           </div>
           <input type="search" placeholder="Where do you want to rent a boat?" autocomplete="neverautocomplete" class="form-control">
-          <div class="row">
-            <div class="col-6">
-              <input type="submit" value="🚤 Motorboat" autocomplete="neverautocomplete" class="form-control home-input-search">
-            </div>
-            <div class="col-6">
-              <input type="submit" value=" ⛵️ Sailboat" autocomplete="neverautocomplete" class="form-control home-input-search">
-            </div>
+          <div class="boat-type">
+            <input type="submit" value="🚤 Motorboat" autocomplete="neverautocomplete" class="form-control home-input-search">
+            <input type="submit" value=" ⛵️ Sailboat" autocomplete="neverautocomplete" class="form-control home-input-search">
           </div>
 
-          <div class="row">
-            <div class="col-6">
-              <p class="date-left">Start date</p>
+          <div class="date-booking">
+            <div class="date-left">
+              <p>Start date</p>
               <input type="date" placeholder="JJ/MM/AAAA" autocomplete="neverautocomplete" class="form-control home-input-search">
             </div>
-            <div class="col-6">
-              <p class = "date-left">Finish date</p>
+            <div class="date-left">
+              <p>Finish date</p>
               <input type="date" placeholder="JJ/MM/AAAA" autocomplete="neverautocomplete" class="form-control home-input-search">
             </div>
           </div>
-            <button type="submit" class="btn btn-light font-weight-bold btn-block px-0 py-3 py-lg-2"> Search </button>
+            <a href="/boats"><button type="submit" class="btn btn-light font-weight-bold btn-block px-0 py-3 py-lg-2"> Search </button></a>
           </div>
             <div class="banner-title">
               <p>Sail whenever you want, wherever you want</p>
@@ -81,16 +61,3 @@
         </a>
     </div>
 
-
-<!-- FOOTER -->
-    <div class="footer">
-      <img src = "https://upload.wikimedia.org/wikipedia/commons/8/80/Travel_boat_blue_logo.png" id = "logo" width="60" height="60">
-    <ul class = "list-inline">
-      <li> <a href = "#"><i class="fa fa-facebook" aria-hidden="false"></i></a></li>
-      <li> <a href = "#"><i class="fa fa-twitter" aria-hidden="false"></i></a></li>
-      <li> <a href = "#"><i class="fa fa-youtube" aria-hidden="false"></i></a></li>
-      <li> <a href = "#"><i class="fa fa-instagram" aria-hidden="false"></i></a></li>
-     </ul>
-   </div>
-  </body>
-</html>
