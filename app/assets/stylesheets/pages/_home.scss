@@ -73,12 +73,23 @@
 }
 
 .cards :hover {
+  .card {
+    box-shadow: 1px 1px 2px grey;
+  }
   text-decoration: none;
   transform: scale(1.03);
 }
 
-.card :hover {
-  box-shadow: 3px 3px 4px black;
+.footer{
+  background: #e4e4e4;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  margin: 40px 0 0 0;
 }
 
+.footer a{
+  font-size: 20px;
+  color: #638dcd;
+}
 
