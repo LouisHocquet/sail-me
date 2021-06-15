@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_15_081630) do
+ActiveRecord::Schema.define(version: 2021_06_15_130010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 2021_06_15_081630) do
     t.integer "price_per_day"
     t.integer "capacity"
     t.integer "building_year"
-    t.integer "engine_power"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.string "title"
     t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
