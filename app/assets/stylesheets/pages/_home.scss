@@ -1,1 +1,95 @@
 // Specific CSS for your home-page
+.style {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px;
+  padding: 0 20px;
+}
+
+.booking-form {
+  border-radius: 5px;
+  background-color: #ebd079;
+  text-align: center;
+  margin: 10px 0;
+  padding: 14px;
+  height: 70%;
+}
+
+.form-control {
+  margin: 10px 0;
+}
+
+.booking-form button {
+  margin: 10px 0;
+}
+
+.title-card-reservation {
+  color: white;
+  text-shadow: 1px 1px 2px grey;
+  font-size: 20px;
+}
+
+.date-left {
+  text-align: left;
+}
+
+.banner-title {
+  text-shadow: 1px 1px 2px grey;
+  font-size: 30px;
+  padding: 0 40px;
+}
+
+.title-cards {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  // position: relative;
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  text-align: center;
+  text-shadow: 1px 1px 2px grey;
+  color: white;
+  margin: 30px 30px;
+  border-radius: 3px;
+  border: none;
+}
+
+.cards :hover {
+  .card {
+    box-shadow: 1px 1px 2px grey;
+  }
+  text-decoration: none;
+  transform: scale(1.03);
+}
+
+.footer{
+  background: #e4e4e4;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+.footer a{
+  font-size: 20px;
+  color: #638dcd;
+}
+
