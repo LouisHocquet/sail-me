@@ -38,7 +38,6 @@ class BoatsController < ApplicationController
     @boat.destroy
 
     redirect_to boats_path, notice: "Your boat has been deleted successfully."
-
   end
 
   private
@@ -48,6 +47,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:category, :brand, :location, :length, :price_per_day, :capacity, :building_year, :engine_power)
+    params.require(:boat).permit(:category, :brand, :location, :length, :price_per_day, :capacity, :building_year, :engine_power, :photo)
   end
 end
