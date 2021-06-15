@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     if current_user
       @id = current_user.id
-      @bookings = Booking.where(@id)
+      @bookings = Booking.where(user_id:@id)
     else
       @bookings = Booking.all
     end
@@ -14,12 +14,16 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @boat = Boat.find(params[:boat_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @boat = Boat.find(params[:boat_id])
+    @booking.user = current_user
+    @booking.boat = @boat
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to boat_bookings_path(@boat)
     else
       render :new
     end
