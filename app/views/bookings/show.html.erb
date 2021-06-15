@@ -1,0 +1,19 @@
+<h1>You made the right choice ! Here is your booking:</h1>
+
+<% console %>
+<%= Boat.find(@booking.boat_id) %>
+<div>
+  <%= "Category: #{Boat.find(@booking.boat_id).category}" %>
+  <%= "Brand: #{Boat.find(@booking.boat_id).brand}" %>
+  <%= "Location: #{Boat.find(@booking.boat_id).location}" %>
+  <%= "Price/day: #{Boat.find(@booking.boat_id).price_per_day}" %>
+  <%= "Capacity: #{Boat.find(@booking.boat_id).capacity}" %>
+  <%= "Building Year: #{Boat.find(@booking.boat_id).building_year}" %>
+  <%= "Engine Power: #{Boat.find(@booking.boat_id).engine_power}" %>
+</div>
+
+<div>
+  <%= link_to 'Book an other boat !', boats_path %>
+</div>
+
+<%= link_to 'Go back to your bookings', bookings_path %>

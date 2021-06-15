@@ -1,0 +1,11 @@
+<h1>Here are all the renter bookings</h1>
+<div>
+  <% @bookings.each do |booking| %>
+    <%= Booking.find(booking.id) %>
+    <%= link_to 'See the details of this booking', booking_path(Booking.find(booking.id)) %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Book an other boat !', boats_path %>
+</div>
