@@ -14,7 +14,7 @@ Boat.destroy_all
 puts "=== Database clean! ==="
 
 puts "=== Adding boats... ==="
-file = URI.open('https://res.cloudinary.com/ddcrlcczl/image/upload/v1623744918/cclxirgjy14of22c8er5.jpg')
+file = URI.open('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
 
 Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1).photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
 
