@@ -28,6 +28,8 @@ class BoatsController < ApplicationController
 
   def update
 
+  end
+
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
