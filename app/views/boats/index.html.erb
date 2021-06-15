@@ -1,5 +1,8 @@
 <div class = "container">
-  <h1> Your boats </h1>
+  <div class = 'd-flex justify-content-between align-items-center'>
+    <h1> Your boats </h1>
+    <div class = 'add-btn'> <span> <%= link_to  "Add a boat", new_boat_path %> </span> </div>
+  </div>
 
   <div class = 'boats'>
     <% @boats.each do |boat| %>
@@ -19,5 +22,5 @@
     <% end %>
   </div>
 
-  <%= link_to "Add a new boat", new_boat_path, class: "btn btn-primary" %>
+
 </div>

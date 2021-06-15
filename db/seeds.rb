@@ -9,8 +9,40 @@
 require 'json'
 require 'open-uri'
 
+puts "=== Cleaning database... ==="
 Boat.destroy_all
+puts "=== Database clean! ==="
 
+puts "=== Adding boats... ==="
 file = URI.open('https://res.cloudinary.com/ddcrlcczl/image/upload/v1623744918/cclxirgjy14of22c8er5.jpg')
-boat = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
-boat.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1).photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat1 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat1.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat2 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat2.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat3 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat3.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat4 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat4.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat5 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat5.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat6 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat6.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat7 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat7.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat8 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat8.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+# boat9 = Boat.create(category:"sailboat",brand:"X",location:"Paris", length:45,price_per_day:65,capacity:6, building_year:2010, engine_power: 250, user_id: 1)
+# boat9.photo.attach(io: file, filename: 'X.jpg', content_type: 'image/jpg')
+
+puts "=== Boats added! ==="
