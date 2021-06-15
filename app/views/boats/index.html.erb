@@ -7,16 +7,16 @@
   <div class = 'boats'>
     <% @boats.each do |boat| %>
       <div class = 'boat-card'>
-        <div> <%= cl_image_tag boat.photo.key, height: 300, width: 400, crop: :fill %> </div>
+        <div class = "boat_image" style="background-image: url('<%= cl_image_path boat.photo.key, height: 220, crop: :fill %>')">
+
+        </div>
         <div class = 'boat-title'> <%= link_to boat.brand, boat_path(boat) %> </div>
         <div class = 'boat-infos'>
           <div>
             <%= boat.category %>
             <%= boat.location %>
           </div>
-          <div>
-            <%= boat.price_per_day %>
-          </div>
+          <div> <%= boat.price_per_day %> €/day</div>
         </div>
       </div>
     <% end %>
