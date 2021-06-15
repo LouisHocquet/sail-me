@@ -1,8 +1,39 @@
-<div class="container" id = 'boat'>
-  <div> <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %> </div>
-  <h1> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h1>
-  <div> <%= link_to "Edit", edit_boat_path, class: 'btn btn-secondary' %> </div>
-  <div> <%= link_to "Remove", boat_path(@boat), method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure?" } %> </div>
+<div class="container">
+
+  <div class="product-card flex-column">
+    <div class="controls">
+        <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boats_path(@boat), method: :delete, 
+          class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
+        <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
+          class: "control-icon edit-icon" %>
+    </div>
+
+    <div class="product-image"
+         style="background-image:
+            url('<%= cl_image_path @boat.photo.key, height: 300, width:400, crop: :fill %>')"></div>
+    <div class="product-details">
+      <h1>Nom du bateau</h1>
+      <div class="boat-tags">
+        <div class="boat-location boat-tag">
+          <i class="fas fa-compass"></i>
+          <%= @boat.location %>
+        </div>
+        <div class="boat-price boat-tag">
+          <i class="fas fa-euro-sign"></i>
+          <%= @boat.price_per_day %>
+        </div>
+      </div>
+
+      <p>
+        <strong>Brand: </strong> <%= @boat.brand %><br>
+        <strong>Category: </strong> <%= @boat.category %><br>
+        <strong>Capacity: </strong> 
+        <% @boat.capacity.times do %>
+          <i class="fas fa-user"></i>
+        <% end %>
+      </p>
+    </div>
+  </div>
 </div>
 
 <div> <%= link_to "Back to boats", boats_path, class: 'btn btn-primary' %> </div>
