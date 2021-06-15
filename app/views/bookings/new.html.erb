@@ -1,6 +1,25 @@
-<h3>Make a new booking</h3>
-<%= simple_form_for [@boat, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit class: 'btn btn-flat' %>
-<% end %>
+<div class = "center-children">
+  <div id = 'boat'>
+    <h1>Here is the boat you have selected:</h1>
+    <div> <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %> </div>
+    <h2> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h2>
+  </div>
+  <div class="add-btn "> <%= link_to "Choose an other boat", boats_path, class: 'kill-link btn btn-flat' %> </div>
+</div>
+
+<div class="booking-create">
+  <h3>Book this boat</h3>
+  <div class="research-bar">
+    <%= simple_form_for [@boat, @booking] do |f| %>
+      <div class= "form-inline" >
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+      </div>
+      <%= f.submit class: 'add-btn' %>
+      <!-- <div class= "add-btn" > -->
+    <!--   </div> -->
+    <% end %>
+
+
+  </div>
+</div>
