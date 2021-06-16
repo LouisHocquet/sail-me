@@ -1,6 +1,20 @@
 .boats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  grid-auto-rows: minmax(100px, auto);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.boats-map-container {
+  display: flex;
+  flex-wrap: wrap;
+  #map {
+    // flex-grow: 1;
+    min-width: 300px;
+    flex: 1;
+  }
+  .boats {
+    min-width: 300px;
+    flex: 2;
+  }
 }

@@ -1,0 +1,38 @@
+.booking-create {
+  justify-content: center;
+  align-items:center;
+  border-radius: 5px;
+  background-color: rgba(234, 207, 121, 0.3);
+  text-align: center;
+  margin: 10px 0;
+  padding: 14px;
+  height: 70%;
+}
+
+.form-inline div {
+  display: inline-block
+}
+
+.research-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.boat-choice {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.center {
+  display: flex;
+  justify-content: center
+}
+
+.center-children {
+  text-align: center;
+  background-color:rgba(234, 207, 121, 0.1);
+  padding: 20px;
+}
+
+.buttonHolder{ text-align: center; }

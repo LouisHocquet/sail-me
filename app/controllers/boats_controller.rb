@@ -2,6 +2,14 @@ class BoatsController < ApplicationController
   before_action :set_id, only: [:show, :edit, :update, :destroy]
   def index
     @boats = Boat.all
+
+    # geocoded scope
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def new

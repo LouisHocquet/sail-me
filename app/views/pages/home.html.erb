@@ -12,19 +12,21 @@
 
           <div class="date-booking">
             <div class="date-left">
-              <p>Start date</p>
               <div class="input-date">
-                <input type="date" placeholder="JJ/MM/AAAA" autocomplete="neverautocomplete" class="form-control home-input-search input-date">
+              <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <% end %>
               </div>
             </div>
             <div class="date-left">
-              <p>Finish date</p>
               <div class="input-date">
-                <input type="date" placeholder="JJ/MM/AAAA" autocomplete="neverautocomplete" class="form-control home-input-search input-date">
+              <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <% end %>
               </div>
             </div>
           </div>
-            <a href="/boats"><button type="submit" class="btn btn-light font-weight-bold btn-block px-0 py-3 py-lg-2"> Search </button></a>
+            <a href="/boats"><button type="submit" class="btn"> Search </button></a>
           </div>
             <div class="banner-title">
               <p>Sail whenever you want, wherever you want</p>
