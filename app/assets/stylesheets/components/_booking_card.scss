@@ -22,6 +22,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .booking-confirmation-image {
   height: 100%;
   width: 30%;
@@ -29,6 +30,15 @@
 }
 
 .booking-confirmation-card{
+=======
+.booking-image {
+  height: 50vh;
+  width: 300px;
+  object-fit: cover;
+}
+
+.booking-card {
+>>>>>>> master
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -36,13 +46,21 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 .booking-confirmation-card h2 {
+=======
+.booking-card h2 {
+>>>>>>> master
   font-size: 23px;
   font-weight: bold;
   margin: 0;
 }
 
+<<<<<<< HEAD
 .booking-confirmation-card p {
+=======
+.booking-card p {
+>>>>>>> master
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -50,8 +68,12 @@
   margin-top: 8px;
 }
 
-.button-options{
+.button-options {
   margin-top: 25px;
   display: flex;
   justify-content: center;
+}
+
+.button-options a {
+  font-size: 20px;
 }
