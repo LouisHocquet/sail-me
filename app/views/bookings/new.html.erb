@@ -5,21 +5,21 @@
     <h2> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h2>
   </div>
   <div class="add-btn "> <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %> </div>
-</div>
+  <div class="booking-create">
+    <h3>Book this boat</h3>
+    <div class="research-bar">
+      <%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat) do |f| %>
+        <div class= "form-inline" >
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit 'Confirm Booking' , class: 'add-btn btn btn-flat buttonHolder' %>
+        </div>
+        <!-- <div class= "add-btn" > -->
 
-<div class="booking-create">
-  <h3>Book this boat</h3>
-  <div class="research-bar">
-    <%= simple_form_for [@boat, @booking] do |f| %>
-      <div class= "form-inline" >
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-      </div>
-      <!-- <div class= "add-btn" > -->
-      <div class="add-btn "> <%= link_to "Confirm booking", bookings_path, class: 'btn btn-flat' %> </div>
-    <!--   </div> -->
-    <% end %>
+      <!--   </div> -->
+      <% end %>
 
 
+    </div>
   </div>
 </div>
