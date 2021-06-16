@@ -12,7 +12,7 @@
          style="background-image:
             url('<%= cl_image_path @boat.photo.key, height: 300, width:400, crop: :fill %>')"></div>
     <div class="product-details">
-      <h1> <%= @boat.title %> </h1>
+      <h2> <%= @boat.title %> </h2>
       <div class="boat-tags">
         <div class="boat-location boat-tag">
           <i class="fas fa-compass"></i>
@@ -36,7 +36,8 @@
   </div>
 
 </div>
-
-<div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
-<div> <%= link_to "Book this boat", new_boat_booking_path(@boat), class: 'btn btn-primary' %> </div>
+<div class="flex-container center mt-3">
+  <div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
+  <div> <%= link_to "Book this boat", new_boat_booking_path(@boat), class: 'btn btn-success' %> </div>
+</div>
 
