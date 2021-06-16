@@ -7,4 +7,5 @@ class Boat < ApplicationRecord
   validates :title, :category, :brand, :location, :length, :price_per_day, :capacity, :building_year, presence: true
   validates :category, acceptance: { accept: ["motorboat", "sailboat"]}
   validates :capacity, :length, :price_per_day, :building_year, numericality: { greater_than: 0 }
+  ge
 end
