@@ -3,7 +3,7 @@ before_action :authenticate_user!, only: :new
   def index
     if current_user
       @id = current_user.id
-      @bookings = Booking.where(user_id:@id)
+      @bookings = Booking.where(user_id: @id)
     else
       @bookings = Booking.all
     end
@@ -24,7 +24,7 @@ before_action :authenticate_user!, only: :new
     @booking.user = current_user
     @booking.boat = @boat
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end

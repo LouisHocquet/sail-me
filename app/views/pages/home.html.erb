@@ -12,19 +12,21 @@
 
           <div class="date-booking">
             <div class="date-left">
-              <p>Start date</p>
               <div class="input-date">
-                <input type="date" placeholder="JJ/MM/AAAA" autocomplete="neverautocomplete" class="form-control home-input-search input-date">
+              <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <% end %>
               </div>
             </div>
             <div class="date-left">
-              <p>Finish date</p>
               <div class="input-date">
-                <input type="date" placeholder="JJ/MM/AAAA" autocomplete="neverautocomplete" class="form-control home-input-search input-date">
+              <%= simple_form_for :search, method: "get" do |f| %>
+                  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <% end %>
               </div>
             </div>
           </div>
-            <a href="/boats"><button type="submit" class="btn btn-light font-weight-bold btn-block px-0 py-3 py-lg-2"> Search </button></a>
+            <a href="/boats"><button type="submit" class="btn"> Search </button></a>
           </div>
             <div class="banner-title">
               <p>Sail whenever you want, wherever you want</p>
@@ -32,37 +34,36 @@
       </div>
 
   <!-- CARDS -->
-      <div class="title-cards">
+      <div class="big-title">
         <h1>FAMOUS LOCATIONS</h1>
       </div>
 
       <div class="cards">
-        <a href="#">
+        <a href="/boats">
           <div class="card" style="background-image: url(https://www.croisiera.com/upload/parcours/grandes/27.jpg)">
             <h2>CORSICA</h2>
           </div>
         </a>
-        <a href="#">
+        <a href="/boats">
           <div class="card" style="background-image: url(https://www.wiztopic.com/file/cntb7a1eoy-phpbgfwcs)">
             <h2>GREECE</h2>
           </div>
         </a>
-      <a href="">
+      <a href="/boats">
         <div class="card" style="background-image: url(https://www.santarelli-marine.fr/photo/diapo1/7/_santarelli_marine_location_et_vente_de_bateaux_1108220190820173124_450xautox70.jpg)">
           <h2>BRITANY</h2>
         </div>
       </a>
       </div>
       <div class="cards">
-        <a href="">
+        <a href="/boats">
           <div class="card" style="background-image: url(https://www.epaillote.com/project/resources/img/original/ilescaraibes.png)">
             <h2>CARIBBEAN</h2>
           </div>
         </a>
-        <a href="">
+        <a href="/boats">
         <div class="card" style="background-image: url(https://www.easyjet.com/ejcms/cache/medialibrary/Images/JSS/Destinations/Hero/Spain_Ibiza_3840x2160.jpg?mw=1920&hash=FCA5B918A953AADB7A15B210ACA1BF1DF05717A4)">
           <h2>IBIZA</h2>
         </div>
         </a>
     </div>
-

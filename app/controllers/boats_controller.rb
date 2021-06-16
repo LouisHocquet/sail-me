@@ -3,6 +3,14 @@ class BoatsController < ApplicationController
   before_action :authenticate_user!, only: :new
   def index
     @boats = Boat.all
+
+    # geocoded scope
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def new
