@@ -1,6 +1,6 @@
 <div class = "container">
   <div class = 'd-flex justify-content-between align-items-center mt-3 mb-3'>
-    <h1> Your boats </h1>
+    <h1> Choose your boat to sail </h1>
     <div class = 'add-btn'> <span> <%= link_to  "Add a boat", new_boat_path %> </span> </div>
   </div>
 
@@ -8,10 +8,10 @@
     <% @boats.each do |boat| %>
     <%= link_to boat_path(boat), { class: "card-link" } do %>
       <div class = 'boat-card'>
-        <div class = "boat_image" style="background-image: url('<%= cl_image_path boat.photo.key, height: 220, crop: :fill %>')">
+        <div class = "boat-image" style="background-image: url('<%= cl_image_path boat.photo.key, height: 220, crop: :fill %>')">
         </div>
         <div class = 'boat-infos'>
-          <h2 class = 'boat-title'> <%= boat.title.capitalize %> </h2>
+          <h4 class = 'boat-title'> <%= boat.title.capitalize %> </h4>
           <div> <%= boat.location %> </div>
         </div>
         <div class = 'boat-infos'>
