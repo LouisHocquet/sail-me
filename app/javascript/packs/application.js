@@ -34,3 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   // initSelect2();
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
