@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def index
     if current_user
       @id = current_user.id
-      @bookings = Booking.where(user_id:@id)
+      @bookings = Booking.where(user_id: @id)
     else
       @bookings = Booking.all
     end
@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.boat = @boat
     if @booking.save
-      redirect_to bookings_path
+      redirect_to booking_path(@booking)
     else
       render :new
     end
