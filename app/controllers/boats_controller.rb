@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   before_action :set_id, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: :new
   def index
     @boats = Boat.all
 
@@ -28,9 +29,9 @@ class BoatsController < ApplicationController
     @boat.user = current_user
 
     if @boat.save
-      redirect_to boat_path(@boat), notice: "Your boat has been added successfully."
+      redirect_to boats_path, notice: "Your boat has been added successfully."
     else
-      render 'boats/show'
+      render 'new'
     end
   end
 
@@ -59,6 +60,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:category, :brand, :location, :length, :price_per_day, :capacity, :building_year, :engine_power, :photo)
+    params.require(:boat).permit(:category, :brand, :location, :length, :price_per_day, :capacity, :building_year, :title, :photo)
   end
 end
