@@ -10,6 +10,17 @@ body {
   z-index: 7;
 }
 
+.navbar-sail-me {
+  color: #2d578b;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.navbar-sail-me a :hover {
+  text-decoration: none;
+  color: #ebd079;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -23,7 +34,6 @@ body {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px;
   padding: 0 20px;
-  margin-top: 0px;
 }
 
 .booking-form {
