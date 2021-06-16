@@ -1,0 +1,53 @@
+.flex-container-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-link {
+  text-decoration: none;
+  color:#0E0000;
+  margin-left: 0 !important;
+  &:hover {
+    text-decoration: none;
+    color:#0E0000;
+  }
+}
+
+.card-booking {
+  display: flex;
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.1);
+  .card-image {
+    // height: 120px;
+    width: 30%;
+    background-size: cover;
+    background-position: center;
+  }
+  .card-details {
+    padding: 8px 16px;
+    flex-grow: 3;
+    p {
+      padding-left: 16px;
+    }
+  }
+  .right-chevron {
+    width: 8%;
+    background-color: #31588A;
+    opacity: 0.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 200ms;
+    border-radius: 0 6px 6px 0;
+    i {
+      font-size: x-large;
+      color: white;
+    }
+  }
+  &:hover .right-chevron {
+    opacity: 0.8;
+    transition-duration: 200ms;
+  }
+}
