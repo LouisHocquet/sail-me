@@ -1,11 +1,11 @@
 .product-image {
   height: 50vh;
   background-size: cover;
-  background-position-x: center;
-  background-position-y: bottom;
+  background-position: center;
 }
 
 .product-card {
+  height: 100vh;
   position: relative;
   width: 80%;
   margin: 0 auto;
@@ -80,8 +80,6 @@
     margin-right: 8px;
   }
 }
-
-
 
 .product-details {
   p {

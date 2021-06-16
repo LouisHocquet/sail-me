@@ -1,31 +1,57 @@
-<h1>You made the right choice ! Here is your booking:</h1>
+<div class="container">
+  <div class="booking-container">
 
-<div class = "card-product">
+    <h1>You made the right choice ! Here is your booking:</h1>
+
+    <div class = "booking-card">
+      <% @boat= Boat.find(@booking.boat_id) %>
+      <div class="booking-image"
+           style="background-image:
+              url('<%= cl_image_path @boat.photo.key, height: 300, width:400, crop: :fill %>')">
+      </div>
+      <div class = "booking-details">
+        <div class="booking-align">
+          <h2>Selected boat - </h2>
+          <i><%= "your boat is a #{@boat.category}" %></i>
+        </div>
+        <div class="booking-align">
+          <h2>Price -  </h2>
+          <i><%= "#{@boat.price_per_day}€" %></i>
+        </div>
+        <div class="booking-align">
+          <h2>Chosen dates - </h2>
+          <i><%= "from #{@booking.start_date} until #{@booking.end_date}" %></i>
+        </div>
+        <div class="booking-align">
+          <h2>Status of your booking - </h2>
+          <% if  @booking.accepted %>
+          <i><%= "Confirmed"%></i>
+          <% else %>
+          <i><%= "Pending" %></i>
+          <% end %>
+        </div>
+        <div class="booking-align">
+          <h2>Share it with your +1 👉🏼 </h2>
+          <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      </div>
+  </div>
+  <div class = "button-options">
+    <div class = "add-btn btn btn-flat buttonHolde">
+      <%= link_to 'Book an other boat !', boats_path %>
+    </div>
+
+    <div class = "add-btn">
+      <%= link_to 'Go back to your bookings', bookings_path %>
+    </div>
+  </div>
 
 
-
-</div>
-<% @boat= Boat.find(@booking.boat_id) %>
-
-<%= Boat.find(@booking.boat_id) %>
-<div>
-  <%= "Category: #{@boat.category}" %>
-  <%= "Brand: #{@boat.brand}" %>
-  <%= "Location: #{@boat.location}" %>
-  <%= "Price/day: #{@boat.price_per_day}" %>
-  <%= "Capacity: #{@boat.capacity}" %>
-  <%= "Building Year: #{@boat.building_year}" %>
-</div>
-
-<div>
-  <%= link_to 'Book an other boat !', boats_path %>
-</div>
-
-<%= link_to 'Go back to your bookings', bookings_path %>
-
-<div class="flash flash-success alert alert-dismissible fade show" role="alert">
-  <span><strong>Yay!</strong> 🎉 you successfully booked this boat</span>
-  <a data-dismiss="alert" aria-label="Close">
-    <i class="fas fa-times"></i>
-  </a>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span><strong>Yay!</strong> 🎉 you successfully booked this boat</span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
 </div>

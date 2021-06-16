@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   before_action :set_id, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: :new
   def index
     @boats = Boat.all
 
@@ -16,6 +17,18 @@ class BoatsController < ApplicationController
     @boat = Boat.new
   end
 
+  def my_boats
+    @boats = Boat.where(user_id: current_user.id)
+
+    # geocoded scope
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
+  end
+
   def show
   end
 
@@ -24,9 +37,9 @@ class BoatsController < ApplicationController
     @boat.user = current_user
 
     if @boat.save
-      redirect_to boat_path(@boat), notice: "Your boat has been added successfully."
+      redirect_to my_boats_path, notice: "Your boat has been added successfully."
     else
-      render 'boats/show'
+      render 'new'
     end
   end
 
@@ -55,6 +68,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:category, :brand, :location, :length, :price_per_day, :capacity, :building_year, :engine_power, :photo)
+    params.require(:boat).permit(:category, :brand, :location, :length, :price_per_day, :capacity, :building_year, :title, :photo)
   end
 end
