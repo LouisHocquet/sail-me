@@ -22,13 +22,13 @@
   align-items: center;
 }
 
-.product-image {
+.booking-confirmation-image {
   height: 100%;
   width: 30%;
   object-fit: cover;
 }
 
-.card-product {
+.booking-confirmation-card{
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -36,13 +36,13 @@
   align-items: center;
 }
 
-.card-product h2 {
+.booking-confirmation-card h2 {
   font-size: 23px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.booking-confirmation-card p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
