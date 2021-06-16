@@ -4,7 +4,7 @@
     <div> <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %> </div>
     <h2> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h2>
   </div>
-  <div class="add-btn "> <%= link_to "Choose an other boat", boats_path, class: 'kill-link btn btn-flat' %> </div>
+  <div class="add-btn "> <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %> </div>
 </div>
 
 <div class="booking-create">
@@ -15,8 +15,8 @@
         <%= f.input :start_date %>
         <%= f.input :end_date %>
       </div>
-      <%= f.submit class: 'add-btn' %>
       <!-- <div class= "add-btn" > -->
+      <div class="add-btn "> <%= link_to "Confirm booking", bookings_path, class: 'btn btn-flat' %> </div>
     <!--   </div> -->
     <% end %>
 
