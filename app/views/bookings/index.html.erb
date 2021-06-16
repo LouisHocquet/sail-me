@@ -1,12 +1,30 @@
-<h1>Here are all the renter bookings</h1>
-<div>
-  <% @bookings.each do |booking| %>
-    <div>
-      <%= Booking.find(booking.id) %>
-      <%= link_to 'See the details of this booking', booking_path(Booking.find(booking.id)) %>
-    </div>
-  <% end %>
+<div class="container">
+  <h1>My bookings</h1>
+  <div class="flex-container-col">
+    <% @bookings.each do |booking| %>
+      <%= link_to booking_path(booking), { class: "card-link" } do %>
+        <div class="card-booking">
+          <div class="card-image" style="background-image: url('<%= cl_image_path booking.boat.photo.key, height: 220, crop: :fill %>')">
+          
+          </div>
+          <div class="card-details">
+            <h2>Boat: <%= booking.boat.title %></h2>
+            <p>
+              From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong><br>
+              Price: <strong><%= booking.boat.price_per_day %></strong> € per day <br>
+              Capacity: <strong><%= booking.boat.capacity %></strong> people <br>
+            </p>
+          </div>
+          <div class="right-chevron">
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+</div>
+
 
 <div>
   <%= link_to 'Book an other boat !', boats_path %>
