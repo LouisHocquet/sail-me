@@ -29,7 +29,7 @@ class BoatsController < ApplicationController
     @boat.user = current_user
 
     if @boat.save
-      redirect_to boats_path, notice: "Your boat has been added successfully."
+      redirect_to my_boats_path, notice: "Your boat has been added successfully."
     else
       render 'new'
     end
