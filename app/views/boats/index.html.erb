@@ -1,24 +1,29 @@
 <div class = "container">
-  <div class = 'd-flex justify-content-between align-items-center'>
+  <div class = 'd-flex justify-content-between align-items-center mt-3 mb-3'>
     <h1> Your boats </h1>
     <div class = 'add-btn'> <span> <%= link_to  "Add a boat", new_boat_path %> </span> </div>
   </div>
 
   <div class = 'boats'>
     <% @boats.each do |boat| %>
+    <%= link_to boat_path(boat), { class: "card-link" } do %>
       <div class = 'boat-card'>
         <div class = "boat_image" style="background-image: url('<%= cl_image_path boat.photo.key, height: 220, crop: :fill %>')">
-
         </div>
-        <div class = 'boat-title'> <%= link_to boat.brand, boat_path(boat) %> </div>
         <div class = 'boat-infos'>
-          <div>
-            <%= boat.category %>
-            <%= boat.location %>
-          </div>
-          <div> <%= boat.price_per_day %> €/day</div>
+          <h2 class = 'boat-title'> <%= boat.title.capitalize %> </h2>
+          <div> <%= boat.location %> </div>
+        </div>
+        <div class = 'boat-infos'>
+          <% if boat.category == "motorboat"%>
+            <p> 🚤 <%= boat.category %> </p>
+            <% else %>
+            <p> ⛵ <%= boat.category %> </p>
+          <% end %>
+          <p> <%= boat.price_per_day %> €/day </p>
         </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 

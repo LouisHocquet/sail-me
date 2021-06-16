@@ -6,7 +6,7 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   &:hover {
-    box-shadow: 0px 0px 15px lightblue;
+    box-shadow: 0px 0px 15px #EACF79;
   }
 }
 
@@ -15,12 +15,23 @@
   justify-content: space-between;
   align-items: center;
   font-size: 20px;
+  padding: 5px 10px;
+  color: #31588A;
 }
 
 .boat_image {
   background-size: cover;
-  background-position: center;
+  background-position-x: center;
+   background-position-y: center;
   height: 180px;
   color: white;
   border-radius: 5px 5px 0px 0px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+h1 {
+  color: #31588A;
 }
