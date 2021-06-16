@@ -1,15 +1,20 @@
 <h1>You made the right choice ! Here is your booking:</h1>
 
-<% console %>
+<div class = "card-product">
+
+
+
+</div>
+<% @boat= Boat.find(@booking.boat_id) %>
+
 <%= Boat.find(@booking.boat_id) %>
 <div>
-  <%= "Category: #{Boat.find(@booking.boat_id).category}" %>
-  <%= "Brand: #{Boat.find(@booking.boat_id).brand}" %>
-  <%= "Location: #{Boat.find(@booking.boat_id).location}" %>
-  <%= "Price/day: #{Boat.find(@booking.boat_id).price_per_day}" %>
-  <%= "Capacity: #{Boat.find(@booking.boat_id).capacity}" %>
-  <%= "Building Year: #{Boat.find(@booking.boat_id).building_year}" %>
-  <%= "Engine Power: #{Boat.find(@booking.boat_id).engine_power}" %>
+  <%= "Category: #{@boat.category}" %>
+  <%= "Brand: #{@boat.brand}" %>
+  <%= "Location: #{@boat.location}" %>
+  <%= "Price/day: #{@boat.price_per_day}" %>
+  <%= "Capacity: #{@boat.capacity}" %>
+  <%= "Building Year: #{@boat.building_year}" %>
 </div>
 
 <div>
@@ -17,3 +22,10 @@
 </div>
 
 <%= link_to 'Go back to your bookings', bookings_path %>
+
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Yay!</strong> 🎉 you successfully booked this boat</span>
+  <a data-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
