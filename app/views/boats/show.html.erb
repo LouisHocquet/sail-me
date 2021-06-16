@@ -2,7 +2,7 @@
 
   <div class="product-card flex-column">
     <div class="controls">
-        <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boats_path(@boat), method: :delete, 
+        <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
           class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
         <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
           class: "control-icon edit-icon" %>
@@ -27,7 +27,7 @@
       <p>
         <strong>Brand: </strong> <%= @boat.brand %><br>
         <strong>Category: </strong> <%= @boat.category %><br>
-        <strong>Capacity: </strong> 
+        <strong>Capacity: </strong>
         <% @boat.capacity.times do %>
           <i class="fas fa-user"></i>
         <% end %>
@@ -37,6 +37,6 @@
 
 </div>
 
+<div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
 <div> <%= link_to "Book this boat", new_boat_booking_path(@boat), class: 'btn btn-primary' %> </div>
-<div> <%= link_to "Back to boats", boats_path, class: 'btn btn-primary' %> </div>
 
