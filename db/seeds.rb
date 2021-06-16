@@ -53,6 +53,10 @@ puts "=== #{Boat.count} boats added! ==="
 
 puts "=== Adding bookings... ==="
 Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user1, boat: boat2)
+Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user1, boat: boat1)
+Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user1, boat: boat3)
+Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user1, boat: boat4)
+Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user1, boat: boat5)
 Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user2, boat: boat3)
 Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user3, boat: boat4)
 Booking.create(start_date: Date.today, end_date: Date.today + 7, user:  user4, boat: boat1)

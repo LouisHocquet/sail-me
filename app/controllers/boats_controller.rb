@@ -17,6 +17,10 @@ class BoatsController < ApplicationController
     @boat = Boat.new
   end
 
+  def my_boats
+    @boats = Boat.where(user_id: current_user.id)
+  end
+
   def show
   end
 
