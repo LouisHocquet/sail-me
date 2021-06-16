@@ -2,6 +2,7 @@
   <h1> Edit Boat </h1>
   <div>
     <%= simple_form_for(@boat) do |f| %>
+    <%= f.input_field :title, label: 'Describe your offer', hint: 'No more than ten words.' %>
     <%= f.input_field :category, placeholder: 'motorboat or sailboat' %>
     <%= f.input_field :brand %>
     <%= f.input_field :location %>
@@ -9,10 +10,9 @@
     <%= f.input_field :price_per_day %>
     <%= f.input_field :capacity %>
     <%= f.input_field :building_year %>
-    <%= f.input_field :engine_power %>
     <%= f.submit 'Update boat', :class => 'btn btn-primary' %>
     <% end %>
   </div>
 
-  <div> <%= link_to "Back to boats", boats_path, class: 'btn btn-primary' %> </div>
+  <div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
 </div>

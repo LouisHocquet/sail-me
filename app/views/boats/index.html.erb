@@ -16,9 +16,9 @@
         </div>
         <div class = 'boat-infos'>
           <% if boat.category == "motorboat"%>
-            <p> 🚤 <%= boat.category %> </p>
+            <p> <%= boat.category %> </p>
             <% else %>
-            <p> ⛵ <%= boat.category %> </p>
+            <p> <%= boat.category %> </p>
           <% end %>
           <p> <%= boat.price_per_day %> €/day </p>
         </div>
