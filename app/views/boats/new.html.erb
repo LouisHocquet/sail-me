@@ -1,23 +1,26 @@
 <div class = "container">
   <h1> 🚤   New Boat  ⛵ </h1>
-  <div>
+  <div class = "form">
     <%= simple_form_for(@boat) do |f| %>
     <%= f.input :title, label: 'Describe your offer', hint: 'No more than ten words.' %>
-    <%= f.input :category, collection: ['🚤 motorboat', '⛵ sailboat'] %>
-    <%= f.input :brand, placeholder: 'Beneteau, Jeanneau, Dufour, Bayliner...'  %>
-    <%= f.input :location, placeholder: 'City name' %>
-    <div class = d-flex justify-content-around align-items-center>
+    <div class = 'd-flex justify-content-between align-items-center'>
+      <%= f.input :category, collection: ['🚤 motorboat', '⛵ sailboat'] %>
+      <%= f.input :brand, placeholder: 'Beneteau, Jeanneau, Dufour, Bayliner...'  %>
+      <%= f.input :photo, as: :file %>
+    </div>
+    <div class = 'd-flex third-row'>
+      <div> <%= f.input :location, placeholder: 'City name' %> </div>
+      <div> <%= f.input :price_per_day %> </div>
+    </div>
+    <div class = 'd-flex justify-content-between align-items-center'>
       <%= f.input :length, hint: 'Measure in meters' %>
       <%= f.input :capacity %>
-      <%= f.input :building_year %>
+      <%= f.input :building_year, collection: 1990..2021 %>
     </div>
-
-    <%= f.input :price_per_day %>
-
-    <%= f.input :photo, as: :file %>
-    <%= f.submit 'Create boat', :class => 'btn btn-success', data: { confirm: "Do you confirm your boat creation?" } %>
-    <% end %>
+    <div class = 'd-flex buttons'>
+      <div><%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
+      <div> <%= f.submit 'Create boat', :class => 'btn btn-success', data: { confirm: "Do you confirm your boat creation?" } %> </div>
+      <% end %>
+    </div>
   </div>
-
-  <div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
 </div>

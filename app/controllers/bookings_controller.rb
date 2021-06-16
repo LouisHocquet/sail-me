@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+before_action :authenticate_user!, only: :new
   def index
     if current_user
       @id = current_user.id
