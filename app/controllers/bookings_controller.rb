@@ -30,9 +30,24 @@ before_action :authenticate_user!, only: :new
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    @boat = @booking.boat
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    if @booking.save
+      redirect_to bookings_path, notice: "Your booking has been updated successfully."
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :status)
   end
 end

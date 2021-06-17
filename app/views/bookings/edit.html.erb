@@ -1,0 +1,22 @@
+<div class = "center-children">
+  <div id = 'boat'>
+    <h1> Manage this booking </h1>
+    <div> <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %> </div>
+    <h2> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h2>
+  </div>
+  <div class="booking-create">
+    <h3>Book this boat</h3>
+    <div class="research-bar">
+      <%= simple_form_for [@boat, @booking], url: booking_path(@booking) do |f| %>
+        <div class= "form-inline" >
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <% if  @boat.user == current_user %>
+          <%= f.input :status, collection: ["Pending", "Accepted", "Rejected"] %>
+          <% end %>
+          <%= f.submit 'Confirm change' , class: 'add-btn btn btn-flat buttonHolder' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

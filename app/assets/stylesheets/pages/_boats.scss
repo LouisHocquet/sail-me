@@ -1,8 +1,8 @@
 .boats {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
 }
 
 .boats-map-container {
@@ -20,5 +20,6 @@
 }
 
 .card-link {
-  margin-left: 0 !important;
+  margin: 0 8px 8px 0 !important;
+  flex: 1;
 }
