@@ -18,9 +18,9 @@
               <h3 class = 'boat-title'> <%= boat.title.capitalize %> </h3>
               <p>
                 <% if boat.category == "motorboat"%>
-                  🚤 <%= boat.category %>
+                  <%= boat.category %>
                 <% else %>
-                  ⛵ <%= boat.category %>
+                  <%= boat.category %>
                 <% end %>
                 <br>
                 <i class="fas fa-user"></i> <%= boat.capacity %>
