@@ -27,6 +27,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { initMapbox } from '../plugins/init_mapbox';
+import{ liquidButton } from '../plugins/liquid_button';
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
