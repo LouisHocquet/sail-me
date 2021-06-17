@@ -10,12 +10,15 @@ class BoatsController < ApplicationController
 
     # geocoded scope
     @markers = @boats.geocoded.map do |boat|
+      icon = "";
+      icon = boat.category == "⛵ sailboat" ? "⛵" : "🚤"
       {
         lat: boat.latitude,
         lng: boat.longitude,
         info_window:
           render_to_string(partial: "info_window",
-          locals: {boat: boat})
+          locals: {boat: boat}),
+        icon: icon
       }
     end
   end
