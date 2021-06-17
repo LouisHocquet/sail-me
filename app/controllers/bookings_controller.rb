@@ -39,10 +39,33 @@ before_action :authenticate_user!, only: :new
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     if @booking.save
-      redirect_to bookings_path, notice: "Your booking has been updated successfully."
+      redirect_to bookings_path, notice: "This booking has been updated successfully."
     else
       render 'new'
     end
+  end
+
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking[:status] = "Accepted"
+    @booking.save
+    redirect_to bookings_path, notice: "This booking has been accepted successfully."
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking[:status] = "Rejected"
+    @booking.save
+    redirect_to bookings_path, notice: "This booking has been rejected successfully."
+  end
+
+  def my_bookings
+    @bookings = Booking.where(user == current_user)
+  end
+
+  def manage_bookings
+    raise
+    @bookings = Booking.where(boat_id)
   end
 
   private
