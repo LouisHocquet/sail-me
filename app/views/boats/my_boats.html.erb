@@ -1,7 +1,6 @@
 <div class = "container">
   <div class = 'title d-flex justify-content-between align-items-center mt-3 mb-3'>
     <h1> MY BOATS </h1>
-    <div class = 'add-btn'> <span> <%= link_to  "Add a boat", new_boat_path %> </span> </div>
   </div>
   <div class="boats-map-container">
 
@@ -9,22 +8,37 @@
     <div class = 'boats'>
       <% @boats.each do |boat| %>
       <%= link_to boat_path(boat), { class: "card-link" } do %>
-        <div class = 'boat-card'>
-          <div class = "boat-image" style="background-image: url('<%= cl_image_path boat.photo.key, height: 220, crop: :fill %>')">
+          <div class = 'boat-card'>
+            <div class="boat-availability available">
+              <span>Available</span>
+            </div>
+            <div class = "boat-image" style="background-image: url('<%= cl_image_path boat.photo.key, height: 220, crop: :fill %>')">
+            </div>
+            <div class = 'boat-details'>
+              <h3 class = 'boat-title'> <%= boat.title.capitalize %> </h3>
+              <p>
+                <% if boat.category == "motorboat"%>
+                  🚤 <%= boat.category %>
+                <% else %>
+                  ⛵ <%= boat.category %>
+                <% end %>
+                <br>
+                <i class="fas fa-user"></i> <%= boat.capacity %>
+              </p>
+
+              <div class="item-tags">
+                <div class="item-tag">
+                  <i class="fas fa-compass"></i>
+                  <%= boat.location %>
+                </div>
+                <div class="item-tag">
+                  <i class="fas fa-euro-sign"></i>
+                  <%= boat.price_per_day %>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class = 'boat-infos'>
-            <h4 class = 'boat-title'> <%= boat.title.capitalize %> </h4>
-            <div> <%= boat.location %> </div>
-          </div>
-          <div class = 'boat-infos'>
-            <% if boat.category == "motorboat"%>
-              <p> 🚤 <%= boat.category %> </p>
-              <% else %>
-              <p> ⛵ <%= boat.category %> </p>
-            <% end %>
-            <p> <%= boat.price_per_day %> €/day </p>
-          </div>
-        </div>
         <% end %>
       <% end %>
     </div>
@@ -35,6 +49,4 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
-
-      <div><%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
 </div>
