@@ -49,23 +49,19 @@ before_action :authenticate_user!, only: :new
     @booking = Booking.find(params[:id])
     @booking[:status] = "Accepted"
     @booking.save
-    redirect_to bookings_path, notice: "This booking has been accepted successfully."
+    redirect_to my_bookings_path, notice: "This booking has been accepted successfully."
   end
 
   def reject
     @booking = Booking.find(params[:id])
     @booking[:status] = "Rejected"
     @booking.save
-    redirect_to bookings_path, notice: "This booking has been rejected successfully."
+    redirect_to my_bookings_path, notice: "This booking has been rejected successfully."
   end
 
   def my_bookings
-    @bookings = Booking.where(user == current_user)
-  end
-
-  def manage_bookings
-    raise
-    @bookings = Booking.where(boat_id)
+    @my_bookings = Booking.where(user_id: current_user.id)
+    @manage_bookings = Booking.joins(:boat).where("boats.user_id = ?", current_user.id)
   end
 
   private

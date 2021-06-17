@@ -1,9 +1,9 @@
 <div class="container">
-  <div class = "d-flex" id="myBtnContainer">
-    <button class = "btn active btn-accept" onclick = "filterSelection('my_bookings')"> My bookings </button>
-    <button class = "btn btn-reject" onclick = "filterSelection('manage_bookings')"> Bookings to manage (<%= @bookings.where(status: "Pending").count %>) </button>
+  <div class = "d-flex category-btn" id="myBtnContainer">
+    <button class = "btn active " onclick = "filterSelection('my_bookings')" data-filter = 'my bookings'> My bookings </button>
+    <button class = "btn " onclick = "filterSelection('manage_bookings')" data-filter = 'manage bookings'> Bookings to manage (<%= @bookings.where(status: "Pending").count %>) </button>
   </div>
-  <div class="flex-container-col">
+  <div class="flex-container-col booking-cards">
     <% @bookings.each do |booking| %>
       <%= link_to booking_path(booking), { class: "card-link" } do %>
         <div class="filterDiv card-booking">

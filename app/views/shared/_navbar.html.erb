@@ -13,16 +13,16 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Register a boat", "/boats/new", class: "nav-link" %>
+          <%= link_to "Register a boat", new_boat_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Boats to sail", boats_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to "My boats", "/my_boats", class: "nav-link" %>
+          <%= link_to "My boats", my_boats_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My bookings", "/bookings", class: "nav-link" %>
+          <%= link_to "My bookings", my_bookings_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://image.freepik.com/vecteurs-libre/capitaine-navire-au-volant-isole-fond-blanc_7496-1004.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
