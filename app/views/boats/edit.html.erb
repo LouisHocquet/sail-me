@@ -1,18 +1,22 @@
 <div class = "container">
-  <h1> Edit Boat </h1>
-  <div>
+  <h1 class = 'title-new'> Edit my boat </h1>
+  <div class = "form">
     <%= simple_form_for(@boat) do |f| %>
-    <%= f.input_field :title, label: 'Describe your offer', hint: 'No more than ten words.' %>
-    <%= f.input_field :category, placeholder: 'motorboat or sailboat' %>
-    <%= f.input_field :brand %>
-    <%= f.input_field :location %>
-    <%= f.input_field :length %>
-    <%= f.input_field :price_per_day %>
-    <%= f.input_field :capacity %>
-    <%= f.input_field :building_year %>
-    <%= f.submit 'Update boat', :class => 'btn btn-primary' %>
+    <div class="description"> <%= f.input :title, label: 'Describe your offer', hint: 'No more than ten words.' %> </div>
+      <div class = 'form-fields'>
+        <%= f.input :category, collection: ['🚤 motorboat', '⛵ sailboat'] %>
+        <%= f.input :brand, placeholder: 'Beneteau, Jeanneau, Dufour, Bayliner...'  %>
+        <%= f.input :location, placeholder: 'City name' %>
+        <%= f.input :price_per_day %>
+        <%= f.input :length, hint: 'Measure in meters' %>
+        <%= f.input :capacity %>
+        <%= f.input :building_year, collection: 1990..2021 %>
+      </div>
+      <div> <%= f.input :photo, as: :file %> </div>
+    <div class = 'd-flex buttons'>
+      <div><%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
+      <div> <%= f.submit 'Update boat', :class => 'btn btn-success' %> </div>
     <% end %>
+    </div>
   </div>
-
-  <div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
 </div>
