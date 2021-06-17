@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="product-card flex-column">
     <div class="controls">
         <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
@@ -10,9 +9,12 @@
 
     <div class="product-image"
          style="background-image:
-            url('<%= cl_image_path @boat.photo.key, height: 300, width:400, crop: :fill %>')"></div>
+            url('<%= cl_image_path @boat.photo.key, height: 300, width:400, crop: :fill %>')">
+    </div>
     <div class="product-details">
-      <h2> <%= @boat.title %> </h2>
+      <div class="boat-title">
+        <h2> <%= @boat.title %> </h2>
+      </div>
       <div class="boat-tags">
         <div class="boat-location boat-tag">
           <i class="fas fa-compass"></i>
@@ -24,14 +26,13 @@
         </div>
       </div>
 
-      <p>
-        <strong>Brand: </strong> <%= @boat.brand %><br>
-        <strong>Category: </strong> <%= @boat.category %><br>
-        <strong>Capacity: </strong>
-        <% @boat.capacity.times do %>
-          <i class="fas fa-user"></i>
-        <% end %>
-      </p>
+      <div class="brand-category-capacity">
+        <p>
+          <strong>Brand: </strong> <%= @boat.brand %><br>
+          <strong>Category: </strong> <%= @boat.category %><br>
+          <i class="fas fa-user"></i> <%= @boat.capacity %>
+        </p>
+      </div>
     </div>
   </div>
 
