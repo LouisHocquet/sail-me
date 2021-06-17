@@ -34,6 +34,13 @@
           <h2>Share it with your +1 👉🏼 </h2>
           <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
         </div>
+        <% if @booking.status == "Accepted" %>
+          <div class="status alert-success" > <%= @booking.status %> </div>
+          <% elsif @booking.status == "Rejected" %>
+          <div class="status alert-danger" > <%= @booking.status %> </div>
+          <% else %>
+          <div class="status alert-warning" > <%= @booking.status %> </div>
+        <% end %>
       </div>
       </div>
   </div>

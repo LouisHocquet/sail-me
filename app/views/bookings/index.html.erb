@@ -14,7 +14,13 @@
               Price: <strong><%= booking.boat.price_per_day %></strong> € per day <br>
               Capacity: <strong><%= booking.boat.capacity %></strong> people <br>
             </p>
-            <div> <%= booking.status %> </div>
+            <% if booking.status == "Accepted" %>
+            <div class="status alert-success" > <%= booking.status %> <%= link_to 'Edit', edit_booking_path(booking) %> </div>
+            <% elsif booking.status == "Rejected" %>
+            <div class="status alert-danger" > <%= booking.status %> <%= link_to 'Edit', edit_booking_path(booking) %> </div>
+            <% else %>
+            <div class="status alert-warning" > <%= booking.status %> <%= link_to 'Edit', edit_booking_path(booking) %> </div>
+            <% end %>
           </div>
           <div class="right-chevron">
             <i class="fas fa-chevron-right"></i>
