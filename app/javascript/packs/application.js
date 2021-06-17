@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import { initMapbox, fitMapToMarkers } from '../plugins/init_mapbox';
+import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpickr";
 
 // import { initSelect2 } from '../components/init_select2';
