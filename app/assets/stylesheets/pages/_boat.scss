@@ -1,5 +1,5 @@
 .product-image {
-  height: 50vh;
+  height: 45vh;
   background-size: cover;
   background-position: center;
 }
@@ -55,7 +55,11 @@
 
 .product-details {
   position: relative;
-  padding: 16px 24px;
+  padding: 8px 24px;
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .boat-tags {
