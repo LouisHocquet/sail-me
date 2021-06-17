@@ -27,6 +27,10 @@
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "last-name" }%>
+    <%= f.input :photo, as: :file,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "Your photo" }%>
   </div>
 
   <div class="form-actions">
