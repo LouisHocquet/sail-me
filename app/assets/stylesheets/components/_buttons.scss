@@ -38,3 +38,15 @@
     background-color: rgba(234, 207, 121, 0.5);
   }
 }
+
+.btn-accept, .btn-reject {
+  padding: 10px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+}
+
+.btn-accept :hover {
+
+}

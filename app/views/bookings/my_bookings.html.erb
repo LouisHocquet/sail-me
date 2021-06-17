@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="d-flex category-btn" id="myBtnContainer">
+    <button class="btn active" id='btn-my-bookings'> My bookings </button>
+    <button class="btn" id='btn-manage-bookings'> Bookings to manage (<%= @manage_bookings.where(status: "Pending").count %>) </button>
+  </div>
+  <div class="flex-container-col" id="my-bookings-container">
+    <% @my_bookings.each do |booking| %>
+      <%= render '/bookings/booking_card', booking: booking %>
+    <% end %>
+  </div>
+  <div class="flex-container-col" id="manage-bookings-container">
+    <% @manage_bookings.each do |booking| %>
+      <%= render '/bookings/booking_card', booking: booking %>
+    <% end %>
+  </div>
+</div>

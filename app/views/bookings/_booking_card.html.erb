@@ -1,0 +1,36 @@
+<%= link_to booking_path(booking), { class: "card-link" } do %>
+  <div class="card-booking">
+    <div class="card-image" style="background-image: url('<%= cl_image_path booking.boat.photo.key, height: 220, crop: :fill %>')">
+
+    </div>
+    <div class="card-details">
+      <div class = 'd-flex justify-content-between'>
+        <h2><%= booking.boat.title %></h2>
+        <div>
+          <% if booking.status == "Accepted" %>
+            <div class="status alert-success" > <%= booking.status %> </div>
+          <% elsif booking.status == "Rejected" %>
+            <div class="status alert-danger" > <%= booking.status %> </div>
+          <% else %>
+          <div class="status alert-warning" > <%= booking.status %> </div>
+        <% end %>
+        </div>
+      </div>
+      <p>
+        From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong><br>
+        Price: <strong><%= booking.boat.price_per_day %></strong> € per day <br>
+        Capacity: <strong><%= booking.boat.capacity %></strong> people <br>
+      </p>
+
+
+      <div> <% if booking.status == "Pending" %>
+        <div> <%= link_to "Accept", accept_path(booking), class: "btn btn-accept" %> </div>
+        <div> <%= link_to "Reject", reject_path(booking), class: "btn btn-reject" %> </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="right-chevron">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+<% end %>

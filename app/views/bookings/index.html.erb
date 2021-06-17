@@ -1,26 +1,40 @@
 <div class="container">
-  <h1>My bookings</h1>
-  <div class="flex-container-col">
+  <div class = "d-flex category-btn" id="myBtnContainer">
+    <button class = "btn active " onclick = "filterSelection('my_bookings')" data-filter = 'my bookings'> My bookings </button>
+    <button class = "btn " onclick = "filterSelection('manage_bookings')" data-filter = 'manage bookings'> Bookings to manage (<%= @bookings.where(status: "Pending").count %>) </button>
+  </div>
+  <div class="flex-container-col booking-cards">
     <% @bookings.each do |booking| %>
       <%= link_to booking_path(booking), { class: "card-link" } do %>
-        <div class="card-booking">
+        <div class="filterDiv card-booking">
           <div class="card-image" style="background-image: url('<%= cl_image_path booking.boat.photo.key, height: 220, crop: :fill %>')">
           
           </div>
           <div class="card-details">
-            <h2><%= booking.boat.title %></h2>
+            <div class = 'd-flex justify-content-between'>
+              <h2><%= booking.boat.title %></h2>
+              <div>
+                <% if booking.status == "Accepted" %>
+                  <div class="status alert-success" > <%= booking.status %> </div>
+                <% elsif booking.status == "Rejected" %>
+                  <div class="status alert-danger" > <%= booking.status %> </div>
+                <% else %>
+                <div class="status alert-warning" > <%= booking.status %> </div>
+              <% end %>
+              </div>
+            </div>
             <p>
               From <strong><%= booking.start_date %></strong> to <strong><%= booking.end_date %></strong><br>
               Price: <strong><%= booking.boat.price_per_day %></strong> € per day <br>
               Capacity: <strong><%= booking.boat.capacity %></strong> people <br>
             </p>
-            <% if booking.status == "Accepted" %>
-            <div class="status alert-success" > <%= booking.status %> <%= link_to 'Edit', edit_booking_path(booking) %> </div>
-            <% elsif booking.status == "Rejected" %>
-            <div class="status alert-danger" > <%= booking.status %> <%= link_to 'Edit', edit_booking_path(booking) %> </div>
-            <% else %>
-            <div class="status alert-warning" > <%= booking.status %> <%= link_to 'Edit', edit_booking_path(booking) %> </div>
-            <% end %>
+
+
+            <div> <% if booking.status == "Pending" %>
+              <div> <%= link_to "Accept", accept_path(booking), class: "btn btn-accept" %> </div>
+              <div> <%= link_to "Reject", reject_path(booking), class: "btn btn-reject" %> </div>
+              <% end %>
+            </div>
           </div>
           <div class="right-chevron">
             <i class="fas fa-chevron-right"></i>
@@ -29,10 +43,4 @@
       <% end %>
     <% end %>
   </div>
-</div>
-</div>
-
-
-<div>
-  <%= link_to 'Book an other boat !', boats_path %>
 </div>

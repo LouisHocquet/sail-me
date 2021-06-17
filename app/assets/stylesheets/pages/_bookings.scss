@@ -27,7 +27,8 @@
   }
   .card-details {
     padding: 8px 16px;
-    flex-grow: 3;
+    flex-grow: 1;
+    width: 500px;
     p {
       padding-left: 16px;
     }
@@ -53,7 +54,32 @@
 }
 
 .status {
-  width: 150px;
+  width: 110px;
   border-radius: 20px;
   text-align: center;
+}
+
+.filterDiv {
+  float: left;
+  background-color: #31588A;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
+
+.show {
+  display: block;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
 }
