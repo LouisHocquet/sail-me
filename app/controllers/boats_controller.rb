@@ -50,7 +50,7 @@ class BoatsController < ApplicationController
   def destroy
     @boat.destroy
 
-    redirect_to boats_path, notice: "Your boat has been deleted successfully."
+    redirect_to my_boats_path, notice: "Your boat has been deleted successfully."
   end
 
   private
