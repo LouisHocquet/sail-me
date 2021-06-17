@@ -25,7 +25,7 @@ puts "=== #{User.count} users added! ==="
 
 
 puts "=== Adding boats... ==="
-boat1 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"Port Tino Rossi, 20000 Ajaccio", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user1.id)
+boat1 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"Port Tino Rossi", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user1.id)
 boat1.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat1.save
 boat2 = Boat.create(title: "Best boat ever had",category:"🚤 motorboat",brand:"X",location:"Martigues", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user2.id)
