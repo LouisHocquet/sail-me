@@ -1,4 +1,5 @@
-h1 {
+.title-new {
+  color: #31588A;
   margin: 20px;
 }
 
@@ -8,6 +9,7 @@ h1 {
 
 .form {
   color: #31588A;
+  text-align: center;
 }
 
 .third-row div {
@@ -21,3 +23,25 @@ h1 {
 .buttons {
   margin-left: 360px;
 }
+
+.form-fields {
+  text-align: center;
+  a {
+    width: 50px;
+  };
+  .form-group {
+    width: 250px;
+    margin: 0 auto;
+  };
+}
+
+.form .description {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+#boat_photo {
+    width: 500px;
+    margin: 0 auto;
+    padding-left: 120px;
+  };

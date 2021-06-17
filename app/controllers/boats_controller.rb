@@ -2,7 +2,11 @@ class BoatsController < ApplicationController
   before_action :set_id, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: :new
   def index
-    @boats = Boat.all
+    if current_user
+      @boats = Boat.where.not(user_id: current_user.id)
+    else
+      @boats = Boat.all
+    end
 
     # geocoded scope
     @markers = @boats.geocoded.map do |boat|
@@ -58,7 +62,7 @@ class BoatsController < ApplicationController
   def destroy
     @boat.destroy
 
-    redirect_to boats_path, notice: "Your boat has been deleted successfully."
+    redirect_to my_boats_path, notice: "Your boat has been deleted successfully."
   end
 
   private
