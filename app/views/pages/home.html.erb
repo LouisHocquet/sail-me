@@ -11,14 +11,12 @@
     </div>
     <div class="dates-selection">
       <div class="date-booking">
-        <div class="date-left">
-          <%= simple_form_for :search, method: "get" do |f| %>
-            <div class="input-date">
-              <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
-              <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
-            </div>
-            <% end %>
-        </div>
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <div class="input-date">
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
+          </div>
+        <% end %>
       </div>
     </div>
     <a href="/boats" class="button-search-booking" style="text-decoration: none; border: #ced4da">
@@ -36,7 +34,7 @@
 </div>
 
 <!-- CARDS -->
-<div class="big-title">
+<div class="big-title mt-3">
   <h1>FAMOUS LOCATIONS</h1>
 </div>
 
