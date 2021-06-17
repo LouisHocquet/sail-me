@@ -19,6 +19,14 @@ class BoatsController < ApplicationController
 
   def my_boats
     @boats = Boat.where(user_id: current_user.id)
+
+    # geocoded scope
+    @markers = @boats.geocoded.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude
+      }
+    end
   end
 
   def show
