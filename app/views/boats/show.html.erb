@@ -1,44 +1,52 @@
+<div class="">
+  <div class="back-btn"> <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %> </div>
+</div>
+<div class="controls">
+    <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
+      class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
+    <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
+      class: "control-icon edit-icon" %>
+</div>
+
+<div class="product-image" style="background-image:
+  url('<%= cl_image_path @boat.photo.key, crop: :fill, :quality=>"auto", :fetch_format=>:auto %>')"></div>
+
 <div class="container">
-  <div class="product-card flex-column">
-    <div class="controls">
-        <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
-          class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
-        <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
-          class: "control-icon edit-icon" %>
+  <div class="product-details">
+    <div class="boat-title-show">
+      <h2> <%= @boat.title %> </h2>
     </div>
-
-    <div class="product-image"
-         style="background-image:
-            url('<%= cl_image_path @boat.photo.key, crop: :fill, :quality=>"auto", :fetch_format=>:auto %>')"></div>
-    </div>
-    <div class="product-details">
-      <div class="boat-title-show">
-        <h2> <%= @boat.title %> </h2>
+    <div class="info-inline">
+      <div class="boat-location boat-tag">
+        <i class="fas fa-compass"></i>
+        <%= @boat.location %>
       </div>
-      <div class="boat-tags">
-        <div class="boat-location boat-tag">
-          <i class="fas fa-compass"></i>
-          <%= @boat.location %>
-        </div>
-        <div class="boat-price boat-tag">
-          <i class="fas fa-euro-sign"></i>
-          <%= @boat.price_per_day %>
-        </div>
+      <div class="boat-price boat-tag">
+        <i class="fas fa-euro-sign"></i>
+        <%= @boat.price_per_day %>
       </div>
-
-      <div class="brand-category-capacity">
-        <p>
-          <strong>Brand: </strong> <%= @boat.brand %><br>
-          <strong>Category: </strong> <%= @boat.category %><br>
-          <i class="fas fa-user"></i> <%= @boat.capacity %>
-        </p>
+      <div class="boat-price boat-tag">
+        <i class="fas fa-user"></i>
+        <%= @boat.capacity %>
+      </div>
+      <div class="boat-price boat-tag">
+        <i class="fas fa-ship"></i>
+        <%= @boat.brand %>
+      </div>
+      <div class="boat-price boat-tag">
+        <%= @boat.category %>
       </div>
     </div>
   </div>
+</div>
 
+<div id="map" class="map-non-sticky"
+     style="width: 40%; height: 300px; margin: 10px auto;"
+     data-markers="<%= @marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<div class="flex-container center" style="margin: 130px;">
+  <div> <%= link_to "Book this boat", new_boat_booking_path(@boat), class: 'validate-btn', style: "text-decoration: none;" %> </div>
 </div>
-<div class="flex-container center mt-3">
-  <div> <%= link_to "Boats to sail", boats_path, class: 'btn btn-primary' %> </div>
-  <div> <%= link_to "Book this boat", new_boat_booking_path(@boat), class: 'btn btn-success' %> </div>
-</div>
+
 

@@ -64,7 +64,7 @@
 
 .boat-tags {
   position: absolute;
-  bottom: 32px;
+  bottom: -17px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -93,8 +93,9 @@
 
 .boat-title-show {
   color: #31588A;
-  margin: 30px auto;
+  margin: 40px auto;
   font-size: 20px;
+  border: black;
 }
 
 .brand-category-capacity {
@@ -103,4 +104,34 @@
     color: #31588A;
     margin-right: 8px;
   }
+}
+
+.back-btn {
+  margin-left: 20px;
+  position: fixed;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: RGBA(255,255,255,0.5);
+  border: none;
+}
+
+.info-inline {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.brand-category {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+  border: black;
+}
+
+.map-non-sticky {
+  width: 40%;
+  height: 300px;
+  margin: 0 auto;
+  position: relative !important;
 }
