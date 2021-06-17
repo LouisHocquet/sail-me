@@ -25,10 +25,10 @@ puts "=== #{User.count} users added! ==="
 
 
 puts "=== Adding boats... ==="
-boat1 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"Ajaccio", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user1.id)
+boat1 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"Port Tino Rossi", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user1.id)
 boat1.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat1.save
-boat2 = Boat.create(title: "Best boat ever had",category:"🚤 motorboat",brand:"X",location:"Marseille", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user2.id)
+boat2 = Boat.create(title: "Best boat ever had",category:"🚤 motorboat",brand:"X",location:"Martigues", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user2.id)
 boat2.photo.attach(io: URI.open('https://images.unsplash.com/photo-1564128247026-ea3094dc46e3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzZ8fG1vdG9yYm9hdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat2.save
 boat3 = Boat.create(title: "Sail this wonder",category:"⛵ sailboat",brand:"X",location:"Nice", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user3.id)
@@ -37,16 +37,16 @@ boat3.save
 boat4 = Boat.create(title: "Enjoy the sea with me",category:"🚤 motorboat",brand:"X",location:"Toulon", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user4.id)
 boat4.photo.attach(io: URI.open('https://images.unsplash.com/photo-1560251180-7142bcc49648?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bW90b3Jib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat4.save
-boat5 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"Ajaccio", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user1.id)
+boat5 = Boat.create(title: "Amazing boat to sail",category:"⛵ sailboat",brand:"X",location:"20200 Bastia", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user1.id)
 boat5.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat5.save
-boat6 = Boat.create(title: "Best boat ever had",category:"🚤 motorboat",brand:"X",location:"Marseille", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user2.id)
+boat6 = Boat.create(title: "Best boat ever had",category:"🚤 motorboat",brand:"X",location:"port de Marseille", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user2.id)
 boat6.photo.attach(io: URI.open('https://images.unsplash.com/photo-1564128247026-ea3094dc46e3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzZ8fG1vdG9yYm9hdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat6.save
-boat7 = Boat.create(title: "Sail this wonder",category:"⛵ sailboat",brand:"X",location:"Nice", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user3.id)
+boat7 = Boat.create(title: "Sail this wonder",category:"⛵ sailboat",brand:"X",location:"1 Rue de la Vieille Jetée, 17200 Royan", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user3.id)
 boat7.photo.attach(io: URI.open('https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2FpbGJvYXR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat7.save
-boat8 = Boat.create(title: "Enjoy the sea with me",category:"🚤 motorboat",brand:"X",location:"Toulon", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user4.id)
+boat8 = Boat.create(title: "Enjoy the sea with me",category:"🚤 motorboat",brand:"X",location:"Brest", length:45,price_per_day:65,capacity:6, building_year:2010, user_id: user4.id)
 boat8.photo.attach(io: URI.open('https://images.unsplash.com/photo-1560251180-7142bcc49648?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bW90b3Jib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat8.save
 puts "=== #{Boat.count} boats added! ==="

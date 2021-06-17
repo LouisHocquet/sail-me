@@ -10,9 +10,15 @@ class BoatsController < ApplicationController
 
     # geocoded scope
     @markers = @boats.geocoded.map do |boat|
+      icon = "";
+      icon = boat.category == "⛵ sailboat" ? "⛵" : "🚤"
       {
         lat: boat.latitude,
-        lng: boat.longitude
+        lng: boat.longitude,
+        info_window:
+          render_to_string(partial: "info_window",
+          locals: {boat: boat}),
+        icon: icon
       }
     end
   end
@@ -26,14 +32,29 @@ class BoatsController < ApplicationController
 
     # geocoded scope
     @markers = @boats.geocoded.map do |boat|
+      icon = "";
+      icon = boat.category == "⛵ sailboat" ? "⛵" : "🚤"
       {
         lat: boat.latitude,
-        lng: boat.longitude
+        lng: boat.longitude,
+        info_window:
+          render_to_string(partial: "info_window",
+          locals: {boat: boat}),
+        icon: icon
       }
     end
   end
 
   def show
+    icon = @boat.category == "⛵ sailboat" ? "⛵" : "🚤"
+    @marker = [{
+        lat: @boat.latitude,
+        lng: @boat.longitude,
+        info_window:
+        render_to_string(partial: "info_window",
+        locals: {boat: @boat}),
+      icon: icon
+      }]
   end
 
   def create
