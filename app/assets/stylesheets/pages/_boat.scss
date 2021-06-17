@@ -9,7 +9,7 @@
   width: 80%;
   margin: 0 auto;
   margin-top: 4vh;
-  box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   background-color: white;
 }
@@ -88,5 +88,18 @@
   p {
     margin-left: 16px;
     font-size: 1.2em;
+  }
+}
+
+.boat-title {
+  color: #31588A;
+  margin: 20px auto;
+}
+
+.brand-category-capacity {
+  i {
+    font-size: 1.4em;
+    color: #31588A;
+    margin-right: 8px;
   }
 }
