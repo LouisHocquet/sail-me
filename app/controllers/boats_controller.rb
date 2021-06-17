@@ -2,7 +2,11 @@ class BoatsController < ApplicationController
   before_action :set_id, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: :new
   def index
-    @boats = Boat.where.not(user_id: current_user.id)
+    if current_user
+      @boats = Boat.where.not(user_id: current_user.id)
+    else
+      @boats = Boat.all
+    end
 
     # geocoded scope
     @markers = @boats.geocoded.map do |boat|

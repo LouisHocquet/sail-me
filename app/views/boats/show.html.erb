@@ -10,7 +10,7 @@
 
     <div class="product-image"
          style="background-image:
-            url('<%= cl_image_path @boat.photo.key, height: 300, width:400, crop: :fill %>')"></div>
+            url('<%= cl_image_path @boat.photo.key, crop: :fill, :quality=>"auto", :fetch_format=>:auto %>')"></div>
     <div class="product-details">
       <h2> <%= @boat.title %> </h2>
       <div class="boat-tags">
