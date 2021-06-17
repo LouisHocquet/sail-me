@@ -1,0 +1,26 @@
+
+#map {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 66px;
+}
+
+.mapboxgl-popup-content {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  h3 {
+    font-size: 16px;
+  }
+  i {
+    margin-right: 8px;
+    color: #31588A;
+  }
+  p {
+    margin-left: 8px;
+  }
+  .mapboxgl-popup-close-button {
+    font-size: 16px;
+    color: lightgray;
+  }
+}
