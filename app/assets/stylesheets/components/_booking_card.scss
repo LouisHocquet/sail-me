@@ -10,13 +10,14 @@
   font-size: 25px;
   font-weight: lighter;
   margin: 15px;
-}
 
-.booking-details i, a {
+  i, a {
   font-size: 25px;
   font-style: normal;
   margin-left: 10px;
+  }
 }
+
 .booking-align{
   display:flex;
   align-items: center;
@@ -34,28 +35,28 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-}
 
-.booking-card h2 {
+  h2 {
   font-size: 23px;
   font-weight: bold;
   margin: 0;
-}
+  }
 
-.booking-card p {
+  p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  }
 }
 
 .button-options {
   margin-top: 25px;
   display: flex;
   justify-content: center;
-}
 
-.button-options a {
+  a {
   font-size: 20px;
+  }
 }
