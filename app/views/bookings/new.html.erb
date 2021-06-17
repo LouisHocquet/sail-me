@@ -1,20 +1,25 @@
-<div class="back-btn "> <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %> </div>
-<div class = "center-children">
-  <div id = 'boat'>
-    <h1>Here is the boat you have selected:</h1>
-    <div> <%= cl_image_tag @boat.photo.key, height: 300, width: 400, crop: :fill %> </div>
-    <h2> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h2>
+<div class="back-btn ">
+  <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %>
+</div>
+
+<div class = 'big-title boat-selected'>
+  <h1>HERE IS THE BOAT YOU HAVE SELECTED</h1>
+  <div class="product-image" style="background-image:
+    url('<%= cl_image_path @boat.photo.key, crop: :fill, :quality=>"auto", :fetch_format=>:auto %>')">
   </div>
-  <div class="booking-create">
-    <h3>Book this boat</h3>
-    <div class="research-bar">
-      <%= simple_form_for [@boat, @booking], url: boat_bookings_path(@boat) do |f| %>
-        <div class= "form-inline" >
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+
+<h2> <%=  @boat.brand %> - <%= @boat.category%> (<%= @boat.location %>)</h2>
+
+<div class="booking-create">
+  <h3>Book this boat</h3>
+  <div class="research-bar">
+
+      <%= simple_form_for :search, method: "get" do |f| %>
+        <div class="form-inline">
+          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
           <%= f.submit 'Confirm Booking' , class: 'validate-btn' %>
         </div>
       <% end %>
-    </div>
   </div>
 </div>
