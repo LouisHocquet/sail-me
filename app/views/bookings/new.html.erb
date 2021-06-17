@@ -1,3 +1,4 @@
+<div class="back-btn "> <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %> </div>
 <div class = "center-children">
   <div id = 'boat'>
     <h1>Here is the boat you have selected:</h1>
@@ -13,11 +14,7 @@
           <%= f.input :end_date %>
           <%= f.submit 'Confirm Booking' , class: 'validate-btn' %>
         </div>
-        <!-- <div class= "add-btn" > -->
-
-      <!--   </div> -->
       <% end %>
     </div>
   </div>
-  <div class="back-btn "> <%= link_to "Choose an other boat", boats_path %> </div>
 </div>
