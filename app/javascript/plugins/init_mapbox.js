@@ -14,8 +14,21 @@ const initMapbox = () => {
   
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+      // custom marker
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.innerText = `${marker.icon}`;
+      element.style.width = '25px';
+      element.style.height = '25px';
+      element.style.fontSize = '16px';
+
+
+      // const boatIcon = L.divIcon({className: '', html:'⛵'})
+
+      new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(map);
     })
 

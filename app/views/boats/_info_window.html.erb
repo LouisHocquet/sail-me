@@ -1,0 +1,13 @@
+
+<h3><%= boat.title %></h3>
+<p>
+  <%= boat.category %>
+  <br>
+  <i class="fas fa-compass"></i><%= boat.location %>
+  <br>
+  <i class="fas fa-user"></i><%= boat.capacity %>
+  <br>
+  <i class="fas fa-euro-sign"></i><%= boat.price_per_day %>
+  <br>
+</p>
+<%= link_to "Book it !", new_boat_booking_path(boat), class: 'validate-btn' %>
