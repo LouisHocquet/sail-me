@@ -15,7 +15,7 @@ btnManageBookings.addEventListener('click', (event) => {
   event.currentTarget.classList.add('active');
   btnMyBookings.classList.remove('active');
   containerMyBookings.style.display = 'none';
-  containerManageBookings.style.display = 'none';
+  containerManageBookings.style.display = null;
 })
 }
 
