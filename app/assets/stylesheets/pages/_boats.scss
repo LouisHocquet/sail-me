@@ -24,3 +24,19 @@
   flex: 1;
 }
 
+.mapboxgl-marker {
+  cursor: pointer;
+}
+
+.form-search-boats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  #query {
+    border-radius: 4px;
+  }
+  #search-btn {
+    background-color: #31588A;
+    margin-left: 8px;
+  }
+}
