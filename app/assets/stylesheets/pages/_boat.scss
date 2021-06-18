@@ -55,7 +55,9 @@
 
 .product-details {
   position: relative;
-  padding: 8px 24px;
+  padding: 24px 24px;
+  background-color: rgba(144, 178, 228, 0.2);
+  border-radius: 10px;
   h2 {
     margin: 0;
     text-align: center;
@@ -73,7 +75,6 @@
 }
 
 .boat-tag {
-  margin-top: 16px;
   align-items: center;
   display: flex;
   font-size: 1.3em;
@@ -89,13 +90,6 @@
     margin-left: 16px;
     font-size: 1.2em;
   }
-}
-
-.boat-title-show {
-  color: #31588A;
-  margin: 40px auto;
-  font-size: 20px;
-  border: black;
 }
 
 .brand-category-capacity {
@@ -134,4 +128,8 @@
   height: 300px;
   margin: 0 auto;
   position: relative !important;
+}
+
+.margin {
+  margin: 16px auto;
 }

@@ -14,7 +14,7 @@
 
 .research-bar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .boat-choice {
@@ -32,4 +32,13 @@
 
 .boat-selected {
   margin: 20px auto;
+}
+
+.general-info {
+  position: absolute;
+}
+
+#booking-dates-right {
+  text-align: right;
+  margin-right: 20px;
 }

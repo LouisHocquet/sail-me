@@ -11,11 +11,12 @@
 <div class="product-image" style="background-image:
   url('<%= cl_image_path @boat.photo.key, crop: :fill, :quality=>"auto", :fetch_format=>:auto %>')"></div>
 
+<div class="boat-title-show">
+  <h2> <%= @boat.title %> </h2>
+</div>
+
 <div class="container">
   <div class="product-details">
-    <div class="boat-title-show">
-      <h2> <%= @boat.title %> </h2>
-    </div>
     <div class="info-inline">
       <div class="boat-location boat-tag">
         <i class="fas fa-compass"></i>
@@ -38,13 +39,12 @@
       </div>
     </div>
   </div>
-</div>
 
-<div id="map" class="map-non-sticky"
+  <div id="map" class="map-non-sticky"
      style="width: 40%; height: 300px; margin: 10px auto;"
      data-markers="<%= @marker.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
+</div>
 <div class="flex-container center" style="margin: 130px;">
   <div> <%= link_to "Book this boat", new_boat_booking_path(@boat), class: 'validate-btn', style: "text-decoration: none;" %> </div>
 </div>

@@ -6,46 +6,57 @@
   <h1>HERE IS THE BOAT YOU HAVE SELECTED</h1>
   <div class="product-image" style="background-image:
     url('<%= cl_image_path @boat.photo.key, crop: :fill, :quality=>"auto", :fetch_format=>:auto %>')">
-  </div>
+</div>
 
+<div class="boat-title-show">
+  <h2> <%= @boat.title %> </h2>
+</div>
 <div class="container">
-  <div class="product-details">
-    <div class="boat-title-show">
-      <h2> <%= @boat.title %> </h2>
+<div class="product-details">
+  <div class="general-info">
+    <div class="info-logo">
+      <div class="first-line-info">
+        <div class="boat-location boat-tag margin">
+          <i class="fas fa-compass"></i>
+          <%= @boat.location %>
+        </div>
+        <div class="boat-price boat-tag margin">
+          <i class="fas fa-euro-sign"></i>
+          <%= @boat.price_per_day %>
+        </div>
+      </div>
+      <div class="second-line-info">
+        <div class="boat-price boat-tag margin">
+          <i class="fas fa-user"></i>
+          <%= @boat.capacity %>
+        </div>
+        <div class="boat-price boat-tag margin">
+          <i class="fas fa-ship"></i>
+          <%= @boat.brand %>
+        </div>
+        <div class="boat-price boat-tag margin">
+          <%= @boat.category %>
+        </div>
+      </div>
     </div>
-    <div class="info-inline">
-      <div class="boat-location boat-tag">
-        <i class="fas fa-compass"></i>
-        <%= @boat.location %>
-      </div>
-      <div class="boat-price boat-tag">
-        <i class="fas fa-euro-sign"></i>
-        <%= @boat.price_per_day %>
-      </div>
-      <div class="boat-price boat-tag">
-        <i class="fas fa-user"></i>
-        <%= @boat.capacity %>
-      </div>
-      <div class="boat-price boat-tag">
-        <i class="fas fa-ship"></i>
-        <%= @boat.brand %>
-      </div>
-      <div class="boat-price boat-tag">
-        <%= @boat.category %>
+  </div>
+
+
+    <div class="booking-dates" id="booking-dates-right">
+      <h3>Booking dates</h3>
+    </div>
+    <div class="research-bar">
+      <div class="form-dates">
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <div class="form">
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
+            <%= f.submit 'Confirm Booking' , class: 'validate-btn' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="booking-create">
-  <h3>Book this boat</h3>
-  <div class="research-bar">
-    <%= simple_form_for :search, method: "get" do |f| %>
-      <div class="form-inline">
-        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
-        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
-        <%= f.submit 'Confirm Booking' , class: 'validate-btn' %>
-      </div>
-    <% end %>
-  </div>
-</div>
+
