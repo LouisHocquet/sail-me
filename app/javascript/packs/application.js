@@ -30,6 +30,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { displayBookings } from '../filters';
 import { loadDynamicBannerText } from '../components/banner';
+import { homeSearch } from '../plugins/home_search';
+import { activeCategory } from '../plugins/home_search';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
@@ -42,6 +44,8 @@ document.addEventListener('turbolinks:load', () => {
   if (document.getElementById('btn-my-bookings')) {
     displayBookings ();
   }
+  if (document.getElementById('home-search-button')) {
+    homeSearch();
+    activeCategory();
+  }
 });
-
-

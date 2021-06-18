@@ -1,6 +1,7 @@
 .boats {
   display: flex;
   flex-wrap: wrap;
+  align-items: start;
   // align-items: center;
   // justify-content: center;
 }
@@ -40,3 +41,24 @@
     margin-left: 8px;
   }
 }
+
+.address-limit {
+  display: block;
+  max-width: 10ch;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
