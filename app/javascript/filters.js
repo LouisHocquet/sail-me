@@ -6,14 +6,14 @@ const containerMyBookings = document.getElementById("my-bookings-container");
 const containerManageBookings = document.getElementById("manage-bookings-container");
 containerManageBookings.style.display = 'none';
 btnMyBookings.addEventListener('click', (event) => {
-  event.currentTarget.classList.add('active');
-  btnManageBookings.classList.remove('active');
+  event.currentTarget.classList.add('btn-actif');
+  btnManageBookings.classList.remove('btn-actif');
   containerManageBookings.style.display = 'none';
   containerMyBookings.style.display = null;
 })
 btnManageBookings.addEventListener('click', (event) => {
-  event.currentTarget.classList.add('active');
-  btnMyBookings.classList.remove('active');
+  event.currentTarget.classList.add('btn-actif');
+  btnMyBookings.classList.remove('btn-actif');
   containerMyBookings.style.display = 'none';
   containerManageBookings.style.display = null;
 })

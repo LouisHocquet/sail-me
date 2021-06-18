@@ -39,14 +39,53 @@
   }
 }
 
-.btn-accept, .btn-reject {
+.accept-booking {
+  margin: 0px 21px 0px 0px;
+  color: black;
   padding: 10px 30px;
   cursor: pointer;
-  border: none;
   border-radius: 7px;
   border: 1px solid lightgrey;
+  text-decoration: none;
 }
 
-.btn-accept :hover {
+.reject-booking {
+  color: black;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+  text-decoration: none;
+}
 
+.accept-booking :hover {
+  text-decoration: none;
+  background-color: red;
+}
+
+.reject-booking :hover {
+  text-decoration: none;
+  background-color: grey;
+}
+
+.accept-reject {
+  display: inline-flex;
+  margin: 15px -20px;
+}
+.btn-booking {
+  color: #636c79;
+  font-size: larger;
+  padding: 16px;
+  border-radius: 7px 7px 0px 0px;
+  border: 1px solid #636c79;
+  border-bottom: none;
+  border-right: none;
+}
+
+.button :hover{
+  background-color: grey;
+}
+
+.btn-actif {
+  background-color: rgba(144, 178, 228, 0.5);
 }

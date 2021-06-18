@@ -23,9 +23,9 @@
       </p>
 
 
-      <div> <% if booking.status == "Pending" %>
-        <div> <%= link_to "Accept", accept_path(booking), class: "btn btn-accept" %> </div>
-        <div> <%= link_to "Reject", reject_path(booking), class: "btn btn-reject" %> </div>
+      <div class="accept-reject"> <% if booking.status == "Pending" %>
+        <div> <%= link_to "Accept", accept_path(booking), class: "accept-booking" %> </div>
+        <div> <%= link_to "Reject", reject_path(booking), class: "reject-booking" %> </div>
         <% end %>
       </div>
     </div>
