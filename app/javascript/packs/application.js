@@ -32,10 +32,12 @@ import { displayBookings } from '../filters';
 import { loadDynamicBannerText } from '../components/banner';
 import { homeSearch } from '../plugins/home_search';
 import { activeCategory } from '../plugins/home_search';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatpickr();
+  initUpdateNavbarOnScroll();
   if (document.getElementById('banner-typed-text')) {
     loadDynamicBannerText();
   }
