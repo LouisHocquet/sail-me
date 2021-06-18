@@ -2,10 +2,12 @@
   <div class="back-btn"> <%= link_to "Choose an other boat", boats_path, class: 'btn btn-flat' %> </div>
 </div>
 <div class="controls">
+  <% if @boat.user == current_user %>
     <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
       class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
     <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
       class: "control-icon edit-icon" %>
+  <% end %>
 </div>
 
 <div class="product-image" style="background-image:
