@@ -24,9 +24,9 @@ before_action :authenticate_user!, only: :new
     @booking.user = current_user
     @booking.boat = @boat
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to my_bookings_path
     else
-      render :new
+      render 'boats/:boat_id/show'
     end
   end
 

@@ -61,6 +61,7 @@ class BoatsController < ApplicationController
         locals: {boat: @boat}),
       icon: icon
       }]
+      @booking = Booking.new
   end
 
   def create

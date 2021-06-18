@@ -1,23 +1,23 @@
 .product-image {
-  height: 45vh;
+  width: 300px;
+  height: 200px;
   background-size: cover;
   background-position: center;
+  border-radius: 10px;
 }
 
 .product-card {
   position: relative;
-  width: 80%;
-  margin: 0 auto;
+  width: 900px;
   margin-top: 4vh;
-  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 6px;
   background-color: white;
 }
 
 .controls {
-  position: fixed;
-  top: -30;
   right: 0;
+  margin-top: 30px;
 }
 
 .control-icon {
@@ -78,7 +78,7 @@
   display: flex;
   font-size: 1.3em;
   i {
-    font-size: 1.4em;
+    font-size: 20px;;
     color: #31588A;
     margin-right: 8px;
   }
@@ -93,9 +93,11 @@
 
 .boat-title-show {
   color: #31588A;
-  margin: 40px auto;
+  padding-top: 5px;
+  margin-top: 40px;
   font-size: 20px;
   border: black;
+  text-align: center;
 }
 
 .brand-category-capacity {
@@ -110,6 +112,7 @@
   margin-left: 20px;
   position: fixed;
   margin-top: 20px;
+  font-size: 20px;
 }
 
 .btn {
@@ -132,6 +135,9 @@
 .map-non-sticky {
   width: 40%;
   height: 300px;
-  margin: 0 auto;
-  position: relative !important;
+}
+
+.form-inline .datepicker {
+  width: 150px;
+  margin: 10px 5px;
 }
