@@ -6,7 +6,7 @@
 .card-link {
   text-decoration: none;
   color:#0E0000;
-  margin-left: 0 !important;
+  margin: 0 !important;
   &:hover {
     text-decoration: none;
     color:#0E0000;
@@ -20,8 +20,8 @@
   border-radius: 6px;
   box-shadow: 8px 5px 5px rgba(0, 0, 0, 0.1);
   .card-image {
-    // height: 120px;
-    width: 30%;
+    height: 140px;
+    width: 100%;
     background-size: cover;
     background-position: center;
   }
@@ -74,12 +74,17 @@
   display: block;
 }
 
-.btn:hover {
-  background-color: #ddd;
+.category-btn {
+  .btn:hover {
+    background-color: #ddd
+  }
+  /* Add a dark background to the active button */
+  .btn.active {
+   background-color: #666;
+    color: white;
+  }
 }
 
-/* Add a dark background to the active button */
-.btn.active {
-  background-color: #666;
-  color: white;
+h4 {
+  color: #31588A;
 }

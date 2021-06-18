@@ -3,17 +3,19 @@
 </div>
 
 <div  class = "container product-card">
-  <div class="boat-title-show">
+  <div class="boat-title-show d-flex justify-content-center">
       <h3> <%= @boat.title %> </h3>
+      <% if @boat.user == current_user %>
+        <div class="controls d-flex">
+            <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
+              class: "control-icon edit-icon" %>
+            <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
+              class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
+        </div>
+      <% end %>
   </div>
-  <div class="controls">
-    <% if @boat.user == current_user %>
-      <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, boat_path(@boat), method: :delete,
-        class: "control-icon delete-icon", data: { confirm: "Are you sure?" } %>
-      <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_boat_path(@boat),
-        class: "control-icon edit-icon" %>
-    <% end %>
-  </div>
+
+
 
   <div class = 'd-flex justify-content-around'>
     <div class="product-image" style="background-image:
@@ -50,14 +52,17 @@
     </div>
   </div>
 
+
   <div class="booking-create">
     <div class="research-bar">
-      <%= simple_form_for [@boat, @booking], method: "post" do |f| %>
-        <div class="form-inline">
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
-          <%= f.submit 'Confirm Booking' , class: 'validate-btn' %>
-        </div>
+      <% if @boat.user != current_user %>
+        <%= simple_form_for [@boat, @booking], method: "post" do |f| %>
+          <div class="form-inline">
+            <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+            <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker", id: "range_end"} %>
+            <%= f.submit 'Confirm Booking' , class: 'validate-btn' %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
