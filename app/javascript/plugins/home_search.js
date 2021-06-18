@@ -1,4 +1,4 @@
-const activeCategory = (category) => {
+const activeCategory = () => {
   const category = document.querySelector(`#category-${category}-boat.active`);
   category.classList.toggle('active');
 };
