@@ -2,13 +2,13 @@
   <div class = 'big-title d-flex justify-content-between align-items-center mt-3 mb-3'>
     <h1> CHOOSE YOUR BOAT TO SAIL </h1>
   </div>
-  <%= form_tag boats_path, method: :get do %>
+  <%= form_tag boats_path, method: :get, class: 'form-search-boats' do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Find a boat"
     %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Search", class: "btn btn-primary", id: "search-btn" %>
   <% end %>
   <div class="boats-map-container">
 
