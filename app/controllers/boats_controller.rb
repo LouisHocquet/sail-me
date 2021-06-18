@@ -4,8 +4,14 @@ class BoatsController < ApplicationController
   def index
     if current_user
       @boats = Boat.where.not(user_id: current_user.id)
+      if params[:query].present?
+        @boats = Boat.search_by_category_and_location(params[:query])
+      end
     else
       @boats = Boat.all
+      if params[:query].present?
+        @boats = Boat.search_by_category_and_location(params[:query])
+      end
     end
 
     # geocoded scope
