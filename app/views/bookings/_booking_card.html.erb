@@ -5,7 +5,7 @@
     </div>
     <div class="card-details">
       <div class = 'd-flex justify-content-between'>
-        <h2><%= booking.boat.title %></h2>
+        <h4><%= booking.boat.title %></h4>
         <div>
           <% if booking.status == "Accepted" %>
             <div class="status alert-success" > <%= booking.status %> </div>
@@ -23,9 +23,12 @@
       </p>
 
 
-      <div> <% if booking.status == "Pending" %>
-        <div> <%= link_to "Accept", accept_path(booking), class: "btn btn-accept" %> </div>
-        <div> <%= link_to "Reject", reject_path(booking), class: "btn btn-reject" %> </div>
+      <div class = "btns-manage d-flex flex-end">
+        <% if booking.status == "Pending" %>
+        <% if booking.user != current_user %>
+          <div> <%= link_to "Accept", accept_path(booking), class: "btn btn-accept" %> </div>
+          <div> <%= link_to "Reject", reject_path(booking), class: "btn btn-reject" %> </div>
+        <% end %>
         <% end %>
       </div>
     </div>

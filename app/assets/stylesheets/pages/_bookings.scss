@@ -74,12 +74,17 @@
   display: block;
 }
 
-.btn:hover {
-  background-color: #ddd;
+.category-btn {
+  .btn:hover {
+    background-color: #ddd
+  }
+  /* Add a dark background to the active button */
+  .btn.active {
+   background-color: #666;
+    color: white;
+  }
 }
 
-/* Add a dark background to the active button */
-.btn.active {
-  background-color: #666;
-  color: white;
+h4 {
+  color: #31588A;
 }
