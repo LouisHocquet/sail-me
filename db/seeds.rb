@@ -46,7 +46,7 @@ boat4 = Boat.create(title: "Enjoy the sea with me",category:"🚤 motorboat",bra
 boat4.photo.attach(io: URI.open('https://images.unsplash.com/photo-1560251180-7142bcc49648?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bW90b3Jib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat4.save
 boat5 = Boat.create(title: "Top boat!",category:"⛵ sailboat",brand:"Beneteau",location:"20200 Bastia", length:20,price_per_day:200,capacity:10, building_year:2018, user_id: user1.id)
-boat5.photo.attach(io: URI.open('https://images.unsplash.com/photo-1586364312368-3d61a0ec826d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
+boat5.photo.attach(io: URI.open('https://images.unsplash.com/photo-1566938089258-932794f51c63?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fHNhaWxib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
 boat5.save
 boat6 = Boat.create(title: "Travel around with me",category:"🚤 motorboat",brand:"Jeanneau",location:"port de Marseille", length:15,price_per_day:120,capacity:6, building_year:2009, user_id: user2.id)
 boat6.photo.attach(io: URI.open('https://images.unsplash.com/photo-1597276103002-1eaf7eef4e4e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW90b3Jib2F0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'), filename: 'X.jpg', content_type: 'image/jpg')
