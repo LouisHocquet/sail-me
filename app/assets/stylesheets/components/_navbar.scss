@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: white;
+  background-color: rgba(255,255,255,0.6);
+  transition: 0.5s background-color ease;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,4 +17,17 @@
 
 .booking-details {
   font-size: 16px;
+}
+
+#register-nav {
+  margin: 0 60px;
+}
+
+.navbar-lewagon {
+  // [...]
+
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }

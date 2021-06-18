@@ -30,10 +30,12 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { displayBookings } from '../filters';
 import { loadDynamicBannerText } from '../components/banner';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatpickr();
+  initUpdateNavbarOnScroll();
   if (document.getElementById('banner-typed-text')) {
     loadDynamicBannerText();
   }
