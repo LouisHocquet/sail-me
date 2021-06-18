@@ -4,23 +4,21 @@
     <div class="title-card-reservation">
       <h1 id="title-landing-page-form">What's the next adventure?</h1>
     </div>
-    <input type="search" placeholder="Where do you want to rent a boat?" autocomplete="neverautocomplete" class="form-control">
+    <input id="location-form-home" type="search" placeholder="Where do you want to rent a boat?" autocomplete="neverautocomplete" class="form-control">
     <div class="boat-type" id = "home-search-category">
-      <input type="submit" value="🚤 Motorboat" autocomplete="neverautocomplete" class="form-control home-input-search" id="category-Motorboat">
+      <input type="submit" value="🚤 Motorboat" autocomplete="neverautocomplete" class="form-control home-input-search margin-right-8px" id="category-Motorboat">
       <input type="submit" value=" ⛵️ Sailboat" autocomplete="neverautocomplete" class="form-control home-input-search" id="category-Sailboat">
     </div>
 <!-- 1. Récupérer infos des 2 premiers champs -->
 <!-- 2. Activer le Search sur le button -->
 <!-- 3. Mettre les infos récupérées en 1 dans 2 -->
-    <a href="/boats" class="button-search-booking" style="text-decoration: none; border: #ced4da">
-      <div>
-        <input type="submit" value="Search" class="form-control home-input-search" id= "home-search-button">
-      </div>
+    <a href="/boats" class="btn btn-primary home-input-search" style="text-decoration: none; border: #ced4da" id= "home-search-button">
+      Search
     </a>
   </div>
   <div class="banner-title">
     <p>
-      Sail whenever you want, wherever you want
+      Sail whenever you want,
       <span id="banner-typed-text"></span>
     </p>
   </div>

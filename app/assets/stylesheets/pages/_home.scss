@@ -6,6 +6,10 @@
   z-index: 7;
 }
 
+.margin-right-8px {
+  margin-right: 8px !important;
+}
+
 .navbar-sail-me {
   color: #2d578b;
   font-size: 25px;
@@ -144,4 +148,12 @@
 #title-landing-page-form {
   color: white;
   margin: 20px 20px 20px 40px;
+}
+
+#home-search-button {
+  background-color: #31588A;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 }
