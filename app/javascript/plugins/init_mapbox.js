@@ -21,7 +21,7 @@ const initMapbox = () => {
       element.innerText = `${marker.icon}`;
       element.style.width = '25px';
       element.style.height = '25px';
-      element.style.fontSize = '16px';
+      element.style.fontSize = '25px';
 
 
       // const boatIcon = L.divIcon({className: '', html:'⛵'})
@@ -35,7 +35,7 @@ const initMapbox = () => {
     const fitMapToMarkers = (map, markers) => {
       const bounds = new mapboxgl.LngLatBounds();
       markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-      map.fitBounds(bounds, { padding: 70, zoom: 4, duration: 1000 });
+      map.fitBounds(bounds, { padding: 70, maxZoom: 7, duration: 1000 });
     };
 
     fitMapToMarkers(map, markers);
