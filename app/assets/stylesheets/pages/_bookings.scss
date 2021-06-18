@@ -85,6 +85,11 @@
   }
 }
 
-h4 {
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: rgba(144, 178, 228, 0.3);
+  color: white;
+
+  h4 {
   color: #31588A;
 }
